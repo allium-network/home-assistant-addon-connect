@@ -3,7 +3,7 @@ description: Reach your Home Assistant — and anything on your LAN — from any
 slug: allium-connect
 url: https://allium.network/connect
 # keep in sync with Mesh/PACKAGING_VERSION (single source of truth — see Mesh/PACKAGING.md)
-version: 0.1.2
+version: 0.1.3
 arch:
   - amd64
   - aarch64

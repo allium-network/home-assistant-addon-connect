@@ -1,0 +1,48 @@
+name: Allium Connect (Home Node)
+description: Reach your Home Assistant — and anything on your LAN — from anywhere, without opening a single port. Account-based home node with end-to-end encryption.
+slug: allium-connect
+url: https://allium.network/connect
+# keep in sync with Mesh/PACKAGING_VERSION (single source of truth — see Mesh/PACKAGING.md)
+version: 0.1.2
+arch:
+  - amd64
+  - aarch64
+startup: application
+boot: auto
+init: true
+# The WireGuard data path needs a TUN device + NET_ADMIN (route/address setup).
+# Without them the node still registers, heartbeats and contributes — it just
+# can't route mesh traffic, which defeats the point — so declare both.
+privileged:
+  - NET_ADMIN
+devices:
+  - /dev/net/tun
+options:
+  connect_token: ""
+  device_name: home-assistant
+  contribute_home: true
+  snowflake: false
+  middle_node: false
+  relay_contribute: false
+  advertise_exit: false
+  exit_tor: false
+  service_upstream: ""
+schema:
+  connect_token: password
+  device_name: str
+  contribute_home: bool
+  snowflake: bool
+  middle_node: bool
+  relay_contribute: bool
+  # advertise_exit: this box becomes YOUR account's "Home" internet exit — your
+  # phone/laptop's whole internet exits from your home IP (not anonymity; your
+  # ISP still sees the traffic). exit_tor additionally detours .onion (dark web)
+  # through a local Tor client (your ISP then sees Tor connections). Both are
+  # same-account only.
+  advertise_exit: bool
+  exit_tor: bool
+  service_upstream: str?
+ports:
+  9001/tcp: null
+ports_description:
+  9001/tcp: Tor relay ORPort — only needed when the optional Tor middle-node contribution is enabled

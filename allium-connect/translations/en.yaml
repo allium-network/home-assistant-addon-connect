@@ -1,0 +1,56 @@
+configuration:
+  connect_token:
+    name: Connect Token
+    description: >-
+      Paste the token from your allium.network dashboard (Devices → add a
+      headless node). It is shown once when generated. The add-on stores it in
+      its private data folder, so you can clear this field after the first
+      successful start.
+  device_name:
+    name: Device Name
+    description: The name this node shows in your Allium dashboard and device list.
+  contribute_home:
+    name: Contribute on Home Network
+    description: >-
+      Let this node forward other peers' sealed, end-to-end-encrypted mesh
+      traffic even though it sits on your home network. Recommended for an
+      always-on home node — it can never read what it forwards. Turn off to
+      keep the node connect-only.
+  snowflake:
+    name: Tor Snowflake Proxy
+    description: >-
+      Also run a Tor Snowflake proxy to help censored users reach the open
+      internet. Off by default. (For Snowflake with a bandwidth cap, dashboard
+      panel and .onion access, use the separate "Allium Mesh" add-on instead.)
+  middle_node:
+    name: Tor Middle Node
+    description: >-
+      Run a Tor middle relay. Your IP appears in Tor's public relay list and
+      port 9001/tcp must be mapped in this add-on's network settings. Off by
+      default; only enable if you understand the implications.
+  relay_contribute:
+    name: Contribute Relay Capacity
+    description: >-
+      Share spare relay bandwidth so other people's devices can connect when
+      they can't link directly. Your node forwards sealed, encrypted traffic it
+      can never read. Off by default.
+  advertise_exit:
+    name: Home Internet Exit
+    description: >-
+      Make this box your account's "Home" internet exit — your phone/laptop's
+      whole internet leaves from your home IP, as if you were at home. This is
+      NOT anonymity (your ISP still sees the traffic). Same-account devices
+      only. Off by default.
+  exit_tor:
+    name: Tor Detour for .onion Sites
+    description: >-
+      Additionally route .onion (dark web) addresses through a local Tor
+      client, so your devices can open onion services without running Tor
+      themselves. Implies the Home Internet Exit. Your ISP then sees Tor
+      connections from your home. Off by default.
+  service_upstream:
+    name: Service Upstream Host (advanced)
+    description: >-
+      Host/IP where your registered services actually listen. Leave empty to
+      auto-detect (correct on Home Assistant OS). Set it only if services show
+      as unreachable, e.g. to the LAN IP of the machine running them.

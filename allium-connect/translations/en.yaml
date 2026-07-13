@@ -51,6 +51,8 @@ configuration:
   service_upstream:
     name: Service Upstream Host (advanced)
     description: >-
-      Host/IP where your registered services actually listen. Leave empty to
-      auto-detect (correct on Home Assistant OS). Set it only if services show
-      as unreachable, e.g. to the LAN IP of the machine running them.
+      Host/IP where your registered services actually listen. On Home Assistant
+      OS the add-on can't reach Home Assistant Core through auto-detect, so if a
+      service you added (e.g. Home Assistant on 8123) shows as unreachable, set
+      this to your Home Assistant machine's LAN IP (e.g. 192.168.1.x), then
+      restart the add-on.

@@ -109,7 +109,11 @@ as a brand-new device with a new mesh IP and will need a fresh connect token.
 
 - **"no connect token"** in the log — set the `connect_token` option (see Setup).
 - **Services unreachable** but the device shows online — set `service_upstream`
-  to the IP of the machine actually running the service.
+  to the IP of the machine actually running the service. **On Home Assistant OS,
+  this is required for Home Assistant itself:** auto-detect can't reach HA Core
+  from inside the add-on, so set `service_upstream` to your HA machine's LAN IP
+  (e.g. `192.168.1.x`) and restart. Newly-added services also need one restart
+  before the node opens their mesh listener.
 - **"insufficient privileges for the network interface"** — the Supervisor did
   not grant the TUN device; make sure you installed this add-on from its
   repository unmodified (the manifest declares `/dev/net/tun` + `NET_ADMIN`).

@@ -2,7 +2,7 @@ name: Allium Connect (Home Node)
 description: Reach Home Assistant, and anything else on your home network, from anywhere. No open ports, end-to-end encrypted.
 slug: allium-connect
 url: https://allium.network/connect
-version: 0.3.1  # keep in sync with Mesh/PACKAGING_VERSION
+version: 0.3.2
 arch:
   - amd64
   - aarch64
@@ -28,7 +28,7 @@ panel_title: Allium Connect
 # Home Assistant API access, used for ONE thing: keeping a single Allium
 # notification in HA's bell current ("set this External URL in the app", "your
 # token no longer works"). The code only ever calls
-# persistent_notification.create / .dismiss (internal/hanotify).
+# persistent_notification.create / .dismiss.
 homeassistant_api: true
 # Option keys never change between versions: a renamed key would silently drop
 # what people already chose. Order = order in the Configuration tab. The four

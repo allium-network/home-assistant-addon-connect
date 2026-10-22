@@ -1,10 +1,10 @@
 configuration:
   connect_token:
-    name: Connect token
+    name: Connect token (optional)
     description: >-
-      Links this add-on to your Allium account. Get one at allium.network:
-      Dashboard → Network → Add a headless device. Paste it once; the add-on
-      remembers it, so you can clear this field after the first start.
+      Leave empty: the add-on's page links it to your account with a short code.
+      Only if you prefer a token: allium.network → Dashboard → Network → Add a
+      headless device, paste it here once (the add-on remembers it).
   device_name:
     name: Device name
     description: How this Home Assistant box is named in your Allium devices.

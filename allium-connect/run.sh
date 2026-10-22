@@ -68,12 +68,26 @@ fi
 # on first run, so it keeps working even if the option is later cleared. With no
 # token at all the node does not exit: it keeps the status page up, which tells
 # the user where to get one.
+# The pasted option is used ONCE per value: the binary saves it to the state
+# file on first use, and the file is the source of truth after that. Without
+# this, an old pasted token would override a newer one the add-on linked by
+# itself (link with a code), forever.
 if [ -n "$CONNECT_TOKEN" ]; then
-    export ALLIUM_CONNECT_TOKEN="$CONNECT_TOKEN"
+    OPT_HASH=$(printf '%s' "$CONNECT_TOKEN" | sha256sum | cut -c1-64)
+    if [ ! -f "${ALLIUM_STATE_DIR}/connect-token" ] || \
+       [ "$(cat "${ALLIUM_STATE_DIR}/option-token.sha256" 2>/dev/null || true)" != "$OPT_HASH" ]; then
+        export ALLIUM_CONNECT_TOKEN="$CONNECT_TOKEN"
+        printf '%s\n' "$OPT_HASH" > "${ALLIUM_STATE_DIR}/option-token.sha256"
+    fi
 elif [ ! -f "${ALLIUM_STATE_DIR}/connect-token" ]; then
-    echo "[allium-connect] No connect token yet. Get one at https://allium.network" >&2
-    echo "[allium-connect] (Dashboard → Network → Add a headless device), paste it into the" >&2
-    echo "[allium-connect] 'Connect token' option, then restart. The add-on's page explains the steps." >&2
+    echo "[allium-connect] Not linked to an Allium account yet. Open this add-on's page:" >&2
+    echo "[allium-connect] it shows a code to approve on allium.network (or paste a token in Configuration)." >&2
+fi
+
+# Under Home Assistant, add "Home Assistant" as a service on this device the
+# first time it connects (once; a service the user deletes stays deleted).
+if [ -n "${SUPERVISOR_TOKEN:-}" ]; then
+    export ALLIUM_HA_AUTOREGISTER=1
 fi
 
 # ── Device name shown in the dashboard ────────────────────────────────────

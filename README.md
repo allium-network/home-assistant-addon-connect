@@ -9,13 +9,16 @@ reverse proxy.
 
 ## Install
 
-1. In Home Assistant: **Settings → Add-ons → Add-on Store → ⋮ → Repositories**,
-   add `https://github.com/allium-network/home-assistant-addon-connect`.
+1. Click the button to add this repository to your Home Assistant (or by hand:
+   **Settings → Add-ons → Add-on Store → ⋮ → Repositories**, add
+   `https://github.com/allium-network/home-assistant-addon-connect`).
+
+   [![Add to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fallium-network%2Fhome-assistant-addon-connect)
 2. Install **Allium Connect (Home Node)** and start it.
-3. Open the add-on's page (**Open Web UI**). It walks you through the rest: get a
-   connect token at **Dashboard → Network → Add a headless device**, paste it in the
-   **Configuration** tab, add Home Assistant as a service, and copy the address for
-   the Home Assistant app.
+3. Open the add-on's page (**Open Web UI**): approve the code it shows on
+   allium.network. The add-on links itself and adds Home Assistant to your account.
+4. Install Allium Connect on your phone, sign in, and paste the address from Home
+   Assistant's notification into the Home Assistant app as External URL.
 
 Updates arrive through Home Assistant like any other add-on.
 

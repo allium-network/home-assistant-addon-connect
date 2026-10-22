@@ -10,23 +10,29 @@ encrypted traffic that neither it nor Allium can read.
 
 ## Setup (about 5 minutes)
 
-1. **Get a connect token.** Sign in at [allium.network](https://allium.network),
-   then go to **Dashboard → Network → Add a headless device**. Copy the token: it
-   is shown only once.
-2. **Paste it.** In this add-on's **Configuration** tab, paste it under
-   **Connect token**, click **Save**, then **Start** (or **Restart**) the add-on.
-3. **Tell Allium where Home Assistant is.** In the dashboard: **Services → Add
-   service**, pick this device (`home-assistant`), then **Home Assistant**, port
-   **8123**.
-4. **Set up the Home Assistant app.** Open the add-on's page (**Open Web UI**, or
-   **Allium Connect** in the sidebar). It shows the exact **External URL** to paste
-   into the app: *Settings → Companion app → your server → External URL*. Keep your
-   Internal URL as it is and list your home Wi-Fi under *Home network*.
-5. **Test it** with Wi-Fi off on your phone and Allium Connect switched on.
+1. **Start the add-on** (you've installed it, so you're nearly there): click **Start**,
+   then **Open Web UI**.
+2. **Link it to your Allium account.** The page shows a short code. Click **Approve
+   on allium.network**, sign in (or create a free account), check that the device is
+   called `home-assistant`, and approve. The add-on links itself and restarts. No
+   token to copy.
+3. **Home Assistant is added for you.** Once linked, the add-on registers Home
+   Assistant (port 8123) on your account by itself.
+4. **On your phone:** install **Allium Connect** (App Store / Google Play) and sign
+   in with the same account. It connects by itself.
+5. **In the Home Assistant app:** a notification tells you the address to use.
+   Settings → Companion app → your server → **External URL**, paste it. Keep your
+   Internal URL as it is; while on your home Wi-Fi, tap **Home network → Add current
+   network**. (The Allium Connect app can also copy the address: Services → Home
+   Assistant → "Use in the Home Assistant app".)
+6. **Test it** with Wi-Fi off on your phone.
 
-The add-on's page tells you at every step what is working and what is not. You
-don't even have to open it: the add-on also puts the next step in Home
-Assistant's notifications (the bell), including the External URL to paste.
+The add-on's page tells you at every step what is working and what is not, and the
+next step also appears in Home Assistant's notifications (the bell).
+
+**Prefer a token?** On allium.network: Dashboard → Network → Add a headless device,
+copy the token, paste it under **Connect token** in the Configuration tab, Save,
+Restart.
 
 ## The add-on's page
 
@@ -49,7 +55,7 @@ The Configuration tab shows four options:
 
 | Option | Default | What it does |
 |---|---|---|
-| **Connect token** | empty | Links the add-on to your Allium account. Needed once; the add-on remembers it. |
+| **Connect token** | empty | Only if you'd rather paste a token than link with a code. Needed once; the add-on remembers it. |
 | **Device name** | `home-assistant` | How this box is named in your Allium devices. |
 | **Use your home internet when away** | off | Your phone and laptop can send all their internet traffic through your home connection, as if you were home. Only your own devices can use it. Not anonymity: your internet provider still sees the traffic. |
 | **Help censored users (Tor Snowflake)** | off | Lends a little bandwidth so people in countries that block the internet can reach Tor. Your IP is not listed publicly, and nobody's traffic leaves the internet from your home. Stops at your monthly data cap. |
@@ -117,10 +123,10 @@ with a new mesh address and needs a new connect token.
 
 The add-on's page, and its notification in Home Assistant, name the problem. In short:
 
-- **"One step left: link your Allium account"**: no connect token yet. Follow the
-  steps on the page.
-- **"Your connect token no longer works"**: it was revoked or expired. Make a new
-  one (Dashboard → Network → Add a headless device), paste it, restart.
+- **"Link this Home Assistant to your Allium account"**: not linked yet. Approve the
+  code on the page.
+- **"Your connect token no longer works"**: it was revoked or expired. The page shows
+  a new code; approve it and the add-on links itself again.
 - **"This box can't reach Home Assistant"**: if you changed Home Assistant's port,
   add Home Assistant again in the dashboard with that port. Otherwise restart the
   add-on; its Log tab says more.
@@ -128,5 +134,7 @@ The add-on's page, and its notification in Home Assistant, name the problem. In 
   machine's IP address in **Where your other services run**, then restart.
 - **"Connected, but traffic can't flow"**: the network interface could not be
   created. Reinstall the add-on from the Allium repository without changes.
-- **The External URL doesn't show**: add Home Assistant as a service in the
-  dashboard (Setup, step 3). It appears within a few minutes.
+- **The External URL doesn't show**: the add-on adds Home Assistant by itself within a
+  minute of linking. If you deleted that service, or your plan's service limit was
+  reached, add it in the dashboard: Services → Add service → this device → Home
+  Assistant, port 8123.

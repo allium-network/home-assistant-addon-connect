@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0
+- **No more token to copy.** The add-on's page shows a short code; approve it on
+  allium.network (sign in or create a free account) and the add-on links itself and
+  restarts. Pasting a token still works if you prefer it.
+- **Home Assistant is added to your account for you** the first time the add-on
+  connects, so the address for the Home Assistant app appears without a visit to the
+  dashboard. If you delete it, it stays deleted.
+- If your token stops working, the page shows a new code to link again.
+- A token you pasted earlier no longer overrides a newer link.
+
 ## 0.2.1
 - **The next step now shows up in Home Assistant's notifications.** Once the
   add-on is connected, a notification tells you the exact External URL to enter in

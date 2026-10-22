@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+- Ships THIRD-PARTY-NOTICES.txt: the licenses of the open-source components built
+  into this add-on. No functional changes.
+
 ## 0.3.0
 - **No more token to copy.** The add-on's page shows a short code; approve it on
   allium.network (sign in or create a free account) and the add-on links itself and

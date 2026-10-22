@@ -2,7 +2,7 @@ name: Allium Connect (Home Node)
 description: Reach Home Assistant, and anything else on your home network, from anywhere. No open ports, end-to-end encrypted.
 slug: allium-connect
 url: https://allium.network/connect
-version: 0.3.0  # keep in sync with Mesh/PACKAGING_VERSION
+version: 0.3.1  # keep in sync with Mesh/PACKAGING_VERSION
 arch:
   - amd64
   - aarch64

@@ -1,8 +1,8 @@
 name: Allium Connect (Home Node)
-description: Reach your Home Assistant — and anything on your LAN — from anywhere, without opening a single port. Account-based home node with end-to-end encryption.
+description: Reach Home Assistant, and anything else on your home network, from anywhere. No open ports, end-to-end encrypted.
 slug: allium-connect
 url: https://allium.network/connect
-version: 0.1.13
+version: 0.2.0  # keep in sync with Mesh/PACKAGING_VERSION
 arch:
   - amd64
   - aarch64
@@ -16,38 +16,49 @@ privileged:
   - NET_ADMIN
 devices:
   - /dev/net/tun
+# Status page in the HA sidebar, served over the authenticated ingress only (the
+# binary answers just the Supervisor's ingress proxy). Read-only:
+# every setting lives in the Configuration tab.
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:home-export-outline
+panel_title: Allium Connect
+# Read-only Supervisor access, used once at start-up to learn this add-on's own
+# slug so the status page can link to this Configuration tab.
+hassio_api: true
+# Option keys never change between versions: a renamed key would silently drop
+# what people already chose. Order = order in the Configuration tab. The four
+# everyday choices have defaults (always shown); the rest are optional (`?`) and
+# sit under "Show unused optional configuration options" until someone sets them.
 options:
   connect_token: ""
   device_name: home-assistant
-  contribute_home: true
-  snowflake: false
-  middle_node: false
-  relay_contribute: false
   advertise_exit: false
-  exit_tor: false
-  host_domains: true
-  service_upstream: ""
+  snowflake: false
 schema:
   connect_token: password
   device_name: str
-  contribute_home: bool
-  snowflake: bool
-  middle_node: bool
-  relay_contribute: bool
-  # advertise_exit: this box becomes YOUR account's "Home" internet exit — your
-  # phone/laptop's whole internet exits from your home IP (not anonymity; your
-  # ISP still sees the traffic). exit_tor additionally detours .onion (dark web)
-  # through a local Tor client (your ISP then sees Tor connections). Both are
-  # same-account only.
   advertise_exit: bool
-  exit_tor: bool
-  # host_domains: serve this account's public ingress domains from this box.
-  # Turn OFF when another always-on node (e.g. a NAS home node) is the real
-  # host — every account node races for the per-domain lease, and a node
-  # without the site's local service would win it and serve nothing.
-  host_domains: bool
+  snowflake: bool
+  # ── Advanced (hidden until used) ──
+  # exit_tor: also detour .onion sites through a local Tor client (implies the
+  # Home exit; your ISP then sees Tor connections). Same-account only.
+  exit_tor: bool?
+  # relay_contribute: serve as a relay for OTHER accounts. Only does anything
+  # when this box is reachable from the internet, which a normal home with no
+  # open ports is not. Unset = off (run.sh exports an explicit false).
+  relay_contribute: bool?
+  # middle_node: a public Tor relay; needs 9001/tcp mapped below.
+  middle_node: bool?
+  # host_domains: serve this account's public domains from this box. Unset = on.
+  # Turn OFF when another always-on node (e.g. a NAS home node) is the real host.
+  host_domains: bool?
+  # contribute_home: status-label override only ("relay on home network too");
+  # kept so existing configs still validate. Unset = on.
+  contribute_home: bool?
+  # service_upstream: where registered services listen, when not on this box.
   service_upstream: str?
 ports:
   9001/tcp: null
 ports_description:
-  9001/tcp: Tor relay ORPort — only needed when the optional Tor middle-node contribution is enabled
+  9001/tcp: Tor relay port — only needed if you turn on "Run a Tor relay"

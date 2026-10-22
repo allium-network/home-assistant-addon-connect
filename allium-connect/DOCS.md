@@ -1,120 +1,127 @@
-# Allium Connect (Home Node) — Home Assistant Add-on
+# Allium Connect (Home Node)
 
-## What it does
+Reach Home Assistant, and anything else on your home network, from your phone
+or laptop, wherever you are. No port forwarding, no DynDNS, no reverse proxy.
 
-This add-on turns your Home Assistant server into an **Allium Connect home
-node**: a device registered on your allium.network account that lets you reach
-Home Assistant — and any other service on your LAN — from anywhere, **without
-opening a single port** on your router.
+Your phone or laptop runs the Allium Connect app; this add-on is the home end.
+The two connect with an end-to-end-encrypted WireGuard tunnel: directly when
+possible, through an Allium relay when not. A relay only passes on sealed,
+encrypted traffic that neither it nor Allium can read.
 
-Your phone or laptop runs the Allium Connect app; this add-on runs the home
-end. The two ends build an end-to-end-encrypted WireGuard tunnel through the
-Allium mesh (direct peer-to-peer when possible, through a relay when not).
-Relays only ever forward sealed ciphertext — neither the relay operator nor
-Allium can read your traffic.
+## Setup (about 5 minutes)
 
-**This is different from the "Allium Mesh" add-on**, which is the anonymous,
-account-free Tor Snowflake proxy + .onion access add-on. See the repository
-README for a comparison — you can run both side by side.
+1. **Get a connect token.** Sign in at [allium.network](https://allium.network),
+   then go to **Dashboard → Network → Add a headless device**. Copy the token: it
+   is shown only once.
+2. **Paste it.** In this add-on's **Configuration** tab, paste it under
+   **Connect token**, click **Save**, then **Start** (or **Restart**) the add-on.
+3. **Tell Allium where Home Assistant is.** In the dashboard: **Services → Add
+   service**, pick this device (`home-assistant`), then **Home Assistant**, port
+   **8123**.
+4. **Set up the Home Assistant app.** Open the add-on's page (**Open Web UI**, or
+   **Allium Connect** in the sidebar). It shows the exact **External URL** to paste
+   into the app: *Settings → Companion app → your server → External URL*. Keep your
+   Internal URL as it is and list your home Wi-Fi under *Home network*.
+5. **Test it** with Wi-Fi off on your phone and Allium Connect switched on.
 
-## Setup
+The add-on's page tells you at every step what is working and what is not.
 
-1. Create an account at [allium.network](https://allium.network) and open the
-   dashboard.
-2. Go to **Devices → add a headless node** and generate a **connect token**
-   (it is shown once — copy it right away).
-3. Install this add-on, paste the token into the **Connect Token** option,
-   optionally change the **Device Name**, and start the add-on.
-4. The node appears in your dashboard device list within a few seconds. Add
-   your services (e.g. Home Assistant on port 8123) from the dashboard; they
-   become reachable from your other Allium devices immediately.
+## The add-on's page
 
-The token is persisted in the add-on's private data folder after the first
-start, so you may clear the option field afterwards if you prefer.
+Open it with **Open Web UI** on the add-on, or turn on **Show in sidebar**. It
+shows:
 
-## Configuration
+- whether this box is **connected**, and if not, exactly what to do;
+- the **External URL** for the Home Assistant app, with a Copy button, and
+  whether this box can reach Home Assistant;
+- other services you added on this box, and whether each one answers;
+- your **devices**: online or offline, direct or via a relay;
+- your **choices** (below) and how much was shared this month.
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `connect_token` | *(empty)* | Token from the dashboard (Devices → add a headless node). Required on first start. |
-| `device_name` | `home-assistant` | Name shown in your dashboard / device list. |
-| `contribute_home` | `true` | Forward other peers' sealed mesh traffic from this always-on node. |
-| `snowflake` | `false` | Also run a Tor Snowflake proxy (helps censored users). |
-| `middle_node` | `false` | Run a Tor middle relay (public relay list, needs port 9001/tcp mapped). |
-| `relay_contribute` | `false` | Share spare relay capacity for peers that can't connect directly. |
-| `advertise_exit` | `false` | Become your account's "Home" internet exit — your devices' traffic leaves from your home IP. Not anonymity; same-account only. |
-| `exit_tor` | `false` | Also detour .onion addresses through a local Tor client (implies the exit). Your ISP then sees Tor connections. |
-| `host_domains` | `true` | Serve your account's public domains from this box. Turn OFF when another always-on node (e.g. a NAS home node) is the real host — a node without the site can win the per-domain lease and serve nothing. |
-| `service_upstream` | *(auto)* | Advanced: host/IP where registered services listen. Leave empty on Home Assistant OS. |
+The page only shows things. All settings are changed in the **Configuration** tab,
+and the page has a button to go there.
 
-## Contribution limits (speed + monthly data cap)
+## Your choices
 
-Contribution caps are managed from your **allium.network dashboard** (the
-Contribution card), not from add-on options — they are account-wide and shared
-with your other devices, exactly like the desktop app:
+The Configuration tab shows four options:
 
-- **Speed cap (Mbps)** — limits the Tor relay's bandwidth (applied to the
-  relay's configuration when the middle node runs).
-- **Monthly data cap (GB)** — the built-in safety governor counts contributed
-  bytes and pauses all contribution (mesh relay, Snowflake, Tor) when the
-  monthly budget is used up; your own remote access keeps working. Contribution
-  resumes automatically when the month resets.
+| Option | Default | What it does |
+|---|---|---|
+| **Connect token** | empty | Links the add-on to your Allium account. Needed once; the add-on remembers it. |
+| **Device name** | `home-assistant` | How this box is named in your Allium devices. |
+| **Use your home internet when away** | off | Your phone and laptop can send all their internet traffic through your home connection, as if you were home. Only your own devices can use it. Not anonymity: your internet provider still sees the traffic. |
+| **Help censored users (Tor Snowflake)** | off | Lends a little bandwidth so people in countries that block the internet can reach Tor. Your IP is not listed publicly, and nobody's traffic leaves the internet from your home. Stops at your monthly data cap. |
 
-The node picks up dashboard changes within about 20 seconds; the current caps
-are shown in the add-on log's periodic status line.
+### Advanced options
+
+These are hidden until you click **Show unused optional configuration options**.
+Most people never need them.
+
+| Option | Default | What it does |
+|---|---|---|
+| **Open .onion sites through home** | off | Also sends `.onion` addresses through a Tor client on this box, so your devices can open onion sites without a Tor app. Turns on the home internet option above. Your internet provider then sees Tor connections from your home. |
+| **Relay for other Allium users** | off | Forwards other accounts' encrypted traffic when their devices can't connect directly. Only works if this box is reachable from the internet. A normal home with no open ports is not, so for most people this does nothing. |
+| **Run a Tor relay** | off | Runs a public Tor middle relay. Your home IP appears in Tor's public relay list, and you must map port `9001/tcp` in the Network section. |
+| **Host my public websites here** | on | Serves your account's public domains (and `.onion` publishes) from this box. Turn it off if another always-on device, like a NAS, is where your websites actually run. |
+| **Where your services run** | empty | Leave empty: Home Assistant on this box is found automatically. Fill in an IP address only if the page says a service you added can't be reached because it runs on another machine. |
+| **Show sharing as active at home** | on | Kept for older setups. It only changes a status label in the log; it does not switch any sharing on or off. |
+
+### Monthly data cap and speed limit
+
+The cap and speed limit for sharing are set in your **allium.network dashboard**
+(the Contribution card), not here. They apply to all your devices together. When
+the monthly cap is used up, sharing pauses until the next month; your own remote
+access keeps working. The add-on picks up changes within about 20 seconds.
+
+## Updates
+
+Home Assistant offers new versions of this add-on like any other: **Settings →
+Add-ons → Allium Connect → Update**. Your device identity and choices are kept.
+Turn on **Auto update** on the add-on's page if you want updates installed for
+you.
 
 ## Privileges this add-on needs
 
-- **`/dev/net/tun` + `NET_ADMIN`** — the WireGuard tunnel is a virtual network
-  interface; creating it and installing its routes requires the TUN device and
-  the NET_ADMIN capability. Both are declared in the add-on manifest and
-  granted automatically by the Supervisor. Without them the node still
-  registers and heartbeats, but cannot route mesh traffic.
-- No Home Assistant API access, no ingress, no other host access.
+- **`/dev/net/tun` + `NET_ADMIN`**: the tunnel is a virtual network interface;
+  creating it and its routes needs both. They are granted automatically.
+- **Read-only Supervisor access**: used once at start-up to learn the add-on's own
+  name, so the page can link to its Configuration tab.
+- **Ingress**: the page is served through Home Assistant's own login. Nothing else
+  can open it: not your other devices on the mesh, and not other add-ons.
+- No access to Home Assistant's data or API.
 
 ## Security
 
-- **End-to-end encrypted**: WireGuard keys are generated on your devices; the
-  tunnel is sealed between them.
-- **Zero-knowledge relays**: when two devices can't connect directly, traffic
-  is forwarded as opaque ciphertext by a relay that cannot decrypt it.
-- **No open ports**: all connections are outbound; your router config is
-  untouched.
+- **End-to-end encrypted**: keys are made on your devices and never leave them.
+- **Relays can't read your traffic**: they pass on sealed ciphertext.
+- **No open ports**: every connection goes out from your home; your router stays
+  closed.
 - The device identity (connect token, WireGuard key, signing key) lives in the
-  add-on's private `/data` volume and never leaves your machine.
+  add-on's private data and is included in Home Assistant backups.
 
-## Contribution toggles (all optional)
+## Stored data
 
-- **Contribute on Home Network** (default on): an always-on home node is the
-  ideal mesh relay — it forwards only sealed ciphertext, within the built-in
-  safety limits. Turn it off for a connect-only node.
-- **Tor Snowflake / Tor Middle Node** (default off): opt-in Tor contributions.
-  Middle-node mode puts your IP in Tor's public relay list and requires mapping
-  port `9001/tcp` in the add-on's network settings — read up before enabling.
-- **Contribute Relay Capacity** (default off): serve as a fallback relay for
-  other Allium users' devices.
+Kept in `/data/allium-connect/`, across restarts and updates:
 
-## Persistent data
+- `connect-token`: the device's account token
+- `wg.key`: WireGuard private key (keeps the same mesh address)
+- `identity.key`: Ed25519 signing key
+- `preferences.json`: saved choices
 
-Stored in `/data/allium-connect/` and kept across restarts and updates:
-
-- `connect-token` — your device's account token
-- `wg.key` — WireGuard private key (stable mesh IP / device identity)
-- `identity.key` — Ed25519 signing key (relay authentication)
-- `preferences.json` — sticky toggles
-
-Deleting the add-on's data resets the device identity: the node will register
-as a brand-new device with a new mesh IP and will need a fresh connect token.
+Uninstalling the add-on deletes these. A reinstall then shows up as a new device
+with a new mesh address and needs a new connect token.
 
 ## Troubleshooting
 
-- **"no connect token"** in the log — set the `connect_token` option (see Setup).
-- **Services unreachable** but the device shows online — set `service_upstream`
-  to the IP of the machine actually running the service. **On Home Assistant OS,
-  this is required for Home Assistant itself:** auto-detect can't reach HA Core
-  from inside the add-on, so set `service_upstream` to your HA machine's LAN IP
-  (e.g. `192.168.1.x`) and restart. Newly-added services also need one restart
-  before the node opens their mesh listener.
-- **"insufficient privileges for the network interface"** — the Supervisor did
-  not grant the TUN device; make sure you installed this add-on from its
-  repository unmodified (the manifest declares `/dev/net/tun` + `NET_ADMIN`).
+The add-on's page names the problem. In short:
+
+- **"One step left: link your Allium account"**: no connect token yet. Follow the
+  steps on the page.
+- **"Your connect token no longer works"**: it was revoked or expired. Make a new
+  one (Dashboard → Network → Add a headless device), paste it, restart.
+- **"This box can't reach Home Assistant"**: put the IP address of the machine
+  running Home Assistant in **Where your services run**, then restart.
+- **"Connected, but traffic can't flow"**: the network interface could not be
+  created. Reinstall the add-on from the Allium repository without changes.
+- **The External URL doesn't show**: add Home Assistant as a service in the
+  dashboard (Setup, step 3). It appears within a few minutes.

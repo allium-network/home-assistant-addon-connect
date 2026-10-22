@@ -1,65 +1,61 @@
 configuration:
   connect_token:
-    name: Connect Token
+    name: Connect token
     description: >-
-      Paste the token from your allium.network dashboard (Devices → add a
-      headless node). It is shown once when generated. The add-on stores it in
-      its private data folder, so you can clear this field after the first
-      successful start.
+      Links this add-on to your Allium account. Get one at allium.network:
+      Dashboard → Network → Add a headless device. Paste it once; the add-on
+      remembers it, so you can clear this field after the first start.
   device_name:
-    name: Device Name
-    description: The name this node shows in your Allium dashboard and device list.
-  contribute_home:
-    name: Contribute on Home Network
-    description: >-
-      Let this node forward other peers' sealed, end-to-end-encrypted mesh
-      traffic even though it sits on your home network. Recommended for an
-      always-on home node — it can never read what it forwards. Turn off to
-      keep the node connect-only.
-  snowflake:
-    name: Tor Snowflake Proxy
-    description: >-
-      Also run a Tor Snowflake proxy to help censored users reach the open
-      internet. Off by default. (For Snowflake with a bandwidth cap, dashboard
-      panel and .onion access, use the separate "Allium Mesh" add-on instead.)
-  middle_node:
-    name: Tor Middle Node
-    description: >-
-      Run a Tor middle relay. Your IP appears in Tor's public relay list and
-      port 9001/tcp must be mapped in this add-on's network settings. Off by
-      default; only enable if you understand the implications.
-  relay_contribute:
-    name: Contribute Relay Capacity
-    description: >-
-      Share spare relay bandwidth so other people's devices can connect when
-      they can't link directly. Your node forwards sealed, encrypted traffic it
-      can never read. Off by default.
+    name: Device name
+    description: How this Home Assistant box is named in your Allium devices.
   advertise_exit:
-    name: Home Internet Exit
+    name: Use your home internet when away
     description: >-
-      Make this box your account's "Home" internet exit — your phone/laptop's
-      whole internet leaves from your home IP, as if you were at home. This is
-      NOT anonymity (your ISP still sees the traffic). Same-account devices
-      only. Off by default.
+      Lets your phone and laptop send all their internet traffic through your
+      home connection, so you browse as if you were at home. Only your own
+      devices can use it. This is not anonymity: your internet provider still
+      sees the traffic. Off by default.
+  snowflake:
+    name: Help censored users (Tor Snowflake)
+    description: >-
+      Lends a little bandwidth to people in countries that block the internet,
+      helping them reach Tor. Your IP is not listed publicly and nobody's
+      traffic leaves the internet from your home. Uses at most the monthly data
+      cap from your dashboard (Contribution card). Off by default.
   exit_tor:
-    name: Tor Detour for .onion Sites
+    name: Open .onion sites through home (advanced)
     description: >-
-      Additionally route .onion (dark web) addresses through a local Tor
-      client, so your devices can open onion services without running Tor
-      themselves. Implies the Home Internet Exit. Your ISP then sees Tor
-      connections from your home. Off by default.
+      Also sends .onion addresses through a Tor client on this box, so your
+      devices can open onion sites without their own Tor app. Turns on "Use
+      your home internet when away". Your internet provider then sees Tor
+      connections from your home.
+  relay_contribute:
+    name: Relay for other Allium users (advanced)
+    description: >-
+      Forwards other accounts' encrypted traffic, which this box can never read,
+      when their devices can't connect directly. Only works if this box is
+      reachable from the internet, which a normal home without open ports is
+      not; otherwise it does nothing. Off unless you turn it on.
+  middle_node:
+    name: Run a Tor relay (advanced)
+    description: >-
+      Runs a public Tor middle relay. Your home IP appears in Tor's public relay
+      list, and you must map port 9001/tcp in the Network section below. Only
+      turn this on if you understand what that means.
   host_domains:
-    name: Host Public Domains
+    name: Host my public websites here (advanced)
     description: >-
-      Serve your account's public domains (and .onion publishes) from this
-      box. Turn OFF when another always-on node — for example a NAS home node —
-      is the real host of your sites; a node without the site's local service
-      can otherwise claim a domain and serve nothing. On by default.
+      Serves your account's public domains (and .onion publishes) from this box.
+      On unless you turn it off. Turn it off if another always-on device, like a
+      NAS, is where your websites actually run.
+  contribute_home:
+    name: Show sharing as active at home (advanced)
+    description: >-
+      Kept for older setups; it only changes the status shown in the log. It
+      does not switch any sharing on or off. Leave it alone.
   service_upstream:
-    name: Service Upstream Host (advanced)
+    name: Where your services run (advanced)
     description: >-
-      Host/IP where your registered services actually listen. On Home Assistant
-      OS the add-on can't reach Home Assistant Core through auto-detect, so if a
-      service you added (e.g. Home Assistant on 8123) shows as unreachable, set
-      this to your Home Assistant machine's LAN IP (e.g. 192.168.1.x), then
-      restart the add-on.
+      Leave empty. Home Assistant on this box is found automatically. Fill in an
+      IP address only if the status page says a service you added can't be
+      reached, because it runs on another machine.

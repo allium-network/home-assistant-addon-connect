@@ -8,6 +8,9 @@ if [ -f /usr/lib/bashio.sh ]; then
 fi
 
 # ── Read configuration from HA options.json ──────────────────────────────
+# Only connect_token, device_name, advertise_exit and snowflake always exist.
+# The advanced options are optional (`?` in config.yaml) and are simply absent
+# until someone sets them, so every read below carries its default.
 CONFIG_PATH="/data/options.json"
 
 if [ -f "$CONFIG_PATH" ]; then
@@ -43,17 +46,34 @@ export ALLIUM_STATE_DIR="${ALLIUM_STATE_DIR:-/data/allium-connect}"
 mkdir -p "$ALLIUM_STATE_DIR"
 chmod 700 "$ALLIUM_STATE_DIR"
 
+# ── Status page (HA sidebar → Allium Connect) ─────────────────────────────
+# Read-only, on the ingress port, answering only the Supervisor's ingress proxy
+# (so it sits behind Home Assistant's own login — never mesh peers or other
+# add-ons). It also carries the first-start instructions when no token is set.
+export ALLIUM_STATUS_PANEL_ADDR=":8099"
+export ALLIUM_STATUS_PANEL_ALLOW="172.30.32.2"
+# The page links to this add-on's Configuration tab, which needs the real slug
+# (a repository install is "<repo-hash>_allium-connect").
+if [ -n "${SUPERVISOR_TOKEN:-}" ]; then
+    SLUG=$(curl -fsS --max-time 5 -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" \
+        http://supervisor/addons/self/info 2>/dev/null | jq -r '.data.slug // empty' || true)
+    if [ -n "$SLUG" ]; then
+        export ALLIUM_HA_ADDON_SLUG="$SLUG"
+    fi
+fi
+
 # ── Connect token ─────────────────────────────────────────────────────────
-# The token comes from the dashboard (allium.network → Devices → add a headless
-# node) and is shown once. The binary persists it to $ALLIUM_STATE_DIR/connect-token
-# on first run, so it keeps working even if the option is later cleared.
+# The token comes from the dashboard (allium.network → Network → Add a headless
+# device) and is shown once. The binary persists it to $ALLIUM_STATE_DIR/connect-token
+# on first run, so it keeps working even if the option is later cleared. With no
+# token at all the node does not exit: it keeps the status page up, which tells
+# the user where to get one.
 if [ -n "$CONNECT_TOKEN" ]; then
     export ALLIUM_CONNECT_TOKEN="$CONNECT_TOKEN"
 elif [ ! -f "${ALLIUM_STATE_DIR}/connect-token" ]; then
-    echo "[allium-connect] ERROR: no connect token configured." >&2
-    echo "[allium-connect] Generate one at https://allium.network (Devices → add a headless node)" >&2
-    echo "[allium-connect] and paste it into the add-on's 'Connect Token' option, then restart." >&2
-    exit 1
+    echo "[allium-connect] No connect token yet. Get one at https://allium.network" >&2
+    echo "[allium-connect] (Dashboard → Network → Add a headless device), paste it into the" >&2
+    echo "[allium-connect] 'Connect token' option, then restart. The add-on's page explains the steps." >&2
 fi
 
 # ── Device name shown in the dashboard ────────────────────────────────────
@@ -140,11 +160,17 @@ if [ "$HOST_DOMAINS" = "false" ]; then
     export ALLIUM_INGRESS_HOSTING="0"
 fi
 
-# ── Service proxy upstream override (advanced) ────────────────────────────
-# Where this node's registered services actually live. Unset = auto-detect
-# (host gateway — correct on Home Assistant OS, where HA listens on the host).
+# ── Where registered services live ────────────────────────────────────────
+# service_upstream set: every service is on that host (the user's explicit
+# answer wins, including for Home Assistant itself).
+# Not set: Home Assistant (8123) is reached by its Supervisor DNS name,
+# `homeassistant`, which resolves to Core from inside any add-on; every other
+# port keeps the binary's auto-detect. The status page shows, per service,
+# whether this box can actually reach it, and says what to set if not.
 if [ -n "$SERVICE_UPSTREAM" ]; then
     export ALLIUM_SERVICE_UPSTREAM="$SERVICE_UPSTREAM"
+elif [ -n "${SUPERVISOR_TOKEN:-}" ] && [ -z "${ALLIUM_SERVICE_UPSTREAMS:-}" ]; then
+    export ALLIUM_SERVICE_UPSTREAMS="8123=homeassistant"
 fi
 
 # ── Start the headless home node ──────────────────────────────────────────

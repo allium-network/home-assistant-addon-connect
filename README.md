@@ -1,55 +1,42 @@
 # Allium Connect (Home Node) — Home Assistant Add-on Repository
 
-> **Your home, anywhere — without opening a single port.**
+> **Your home, anywhere, without opening a single port.**
 
-This repository contains the **Allium Connect (Home Node)** add-on: it registers
-your Home Assistant server as a device on your [allium.network](https://allium.network)
-account, so you can reach Home Assistant — and anything else on your LAN — from
-your phone or laptop, from anywhere, with **no port-forwarding, no DDNS, no
-reverse proxy**.
+This add-on adds your Home Assistant box to your [allium.network](https://allium.network)
+account, so you can reach Home Assistant, and anything else on your home network,
+from your phone or laptop wherever you are. No port forwarding, no DynDNS, no
+reverse proxy.
+
+## Install
+
+1. In Home Assistant: **Settings → Add-ons → Add-on Store → ⋮ → Repositories**,
+   add `https://github.com/allium-network/home-assistant-addon-connect`.
+2. Install **Allium Connect (Home Node)** and start it.
+3. Open the add-on's page (**Open Web UI**). It walks you through the rest: get a
+   connect token at **Dashboard → Network → Add a headless device**, paste it in the
+   **Configuration** tab, add Home Assistant as a service, and copy the address for
+   the Home Assistant app.
+
+Updates arrive through Home Assistant like any other add-on.
 
 ## How it works
 
-- Install the add-on and paste a **connect token** from your dashboard
-  (allium.network → **Devices → add a headless node**; the token is shown once).
-- The add-on registers a WireGuard device on your account and keeps an
-  end-to-end-encrypted tunnel available to your other Allium devices.
-- Connections go **direct, peer-to-peer** whenever possible. When two networks
-  can't link directly, traffic falls back through a relay that only ever
-  forwards **sealed ciphertext** — zero-knowledge by design: neither the relay
-  operator nor Allium can read it.
-- Register your services (Home Assistant on 8123, Plex, your NAS, a printer…)
-  in the dashboard and open them from any of your devices as if you were home.
+- Your phone or laptop runs the Allium Connect app; this add-on is the home end.
+- They connect **directly, peer-to-peer** whenever possible. When two networks
+  can't link directly, traffic goes through a relay that only passes on **sealed
+  ciphertext**: neither the relay nor Allium can read it.
+- Keys are made on your devices and never leave them. Every connection goes out
+  from your home, so your router stays closed.
 
-## Security in one paragraph
+## Choices
 
-Keys are generated on your devices and never leave them. Every tunnel is
-end-to-end encrypted (WireGuard). There are no inbound ports: everything is
-outbound-only, so your router and firewall stay closed. The relay tier is
-zero-knowledge — it moves opaque ciphertext it cannot decrypt. Your device
-identity lives in the add-on's private data volume on your own hardware.
+Four everyday options: the connect token, a device name, **Use your home internet
+when away**, and **Help censored users (Tor Snowflake)**. Everything else is under
+the advanced options and off unless you need it. Full reference: [DOCS.md](allium-connect/DOCS.md).
 
-## This is NOT the "Allium Mesh" add-on
+## Coming from "Allium Mesh"?
 
-Both add-ons exist, and they do different jobs:
-
-| | **Allium Connect (Home Node)** — this repo | **[Allium Mesh](https://github.com/allium-network/home-assistant-addon)** — anonymous |
-|---|---|---|
-| Account | Yes — registers on your allium.network account | No account, fully anonymous |
-| Main job | Reach HA + your LAN from anywhere (fast WireGuard tunnels, named services, device list) | Contribute a Tor Snowflake proxy; free `.onion` remote access in return |
-| Remote access | Native apps, direct P2P speed | Tor Browser via a `.onion` address |
-| Contribution | Optional (mesh relay, Snowflake, Tor middle node) | The point of the add-on |
-
-Run one or both — they don't conflict. If you only want to help censored users
-and don't want an account, use Allium Mesh. If you want "my home, from
-anywhere, no open ports", this add-on is the one.
-
-## Installation
-
-1. In Home Assistant: **Settings → Add-ons → Add-on Store → ⋮ → Repositories**,
-   add this repository's URL.
-2. Install **Allium Connect (Home Node)**.
-3. Paste your connect token into the add-on configuration and start it.
-
-Full option reference, privileges and troubleshooting: see the add-on's
-[DOCS.md](allium-connect/DOCS.md).
+The Allium Mesh add-on is retired. This add-on replaces it: faster native access
+instead of Tor Browser, and the same Snowflake proxy if you want to keep helping.
+Install this one, check that you can reach Home Assistant through it, then
+uninstall Allium Mesh.

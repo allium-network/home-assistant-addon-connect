@@ -54,8 +54,9 @@ configuration:
       Kept for older setups; it only changes the status shown in the log. It
       does not switch any sharing on or off. Leave it alone.
   service_upstream:
-    name: Where your services run (advanced)
+    name: Where your other services run (advanced)
     description: >-
-      Leave empty. Home Assistant on this box is found automatically. Fill in an
-      IP address only if the status page says a service you added can't be
-      reached, because it runs on another machine.
+      Leave empty. Home Assistant is always found on this box, whatever you put
+      here. Fill in an IP address only if the status page says another service
+      you added (say, Plex on a NAS) can't be reached because it runs on another
+      machine.

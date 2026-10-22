@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.2.1
+- **The next step now shows up in Home Assistant's notifications.** Once the
+  add-on is connected, a notification tells you the exact External URL to enter in
+  the Home Assistant app. If something needs you (no token yet, a token that stopped
+  working, Home Assistant not reachable), the notification says what to do. There is
+  only ever one Allium notification; it is replaced when the next step changes, and
+  once you dismiss it, it stays away until there is something new.
+- **Fixed: setting "Where your services run" for another machine could cut off Home
+  Assistant itself.** Home Assistant is now always found on this box, whatever that
+  option says (it is renamed "Where your other services run").
+- **Fixed: the status page kept saying "Connected" after the add-on stopped.** It now
+  warns when it can't reach the add-on.
+- **Fixed: right after a start, the page asked you to add Home Assistant even when you
+  already had.** That card now waits until the add-on is connected.
+- **Fixed: "Use your home internet when away" showed Off when it was on but could not
+  start.** It now says "Not available now".
+- Snowflake says "Not running" (with the reason) when your safety settings don't allow
+  sharing on this connection, instead of "Starting" forever.
+- The add-on no longer asks for Supervisor API access; it didn't need it.
+- For the notifications the add-on now asks for Home Assistant API access. It uses it only to
+  create or remove that one notification; it never changes your Home Assistant
+  settings.
+
 ## 0.2.0
 - **New: the add-on has its own page** (Open Web UI, or Allium Connect in the
   sidebar). It shows whether you're connected, the exact External URL to paste into

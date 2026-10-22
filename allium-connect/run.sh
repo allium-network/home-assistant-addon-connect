@@ -161,16 +161,18 @@ if [ "$HOST_DOMAINS" = "false" ]; then
 fi
 
 # ── Where registered services live ────────────────────────────────────────
-# service_upstream set: every service is on that host (the user's explicit
-# answer wins, including for Home Assistant itself).
-# Not set: Home Assistant (8123) is reached by its Supervisor DNS name,
-# `homeassistant`, which resolves to Core from inside any add-on; every other
-# port keeps the binary's auto-detect. The status page shows, per service,
-# whether this box can actually reach it, and says what to set if not.
+# Home Assistant (8123) ALWAYS runs on this box, so it is always reached by its
+# Supervisor DNS name, `homeassistant` (resolves to Core from inside any add-on).
+# The per-port entry wins over service_upstream, so setting service_upstream for
+# a service on another machine (a NAS, say) can never point Home Assistant away.
+# service_upstream: where every OTHER registered service lives. Empty = the
+# binary's auto-detect. The status page shows, per service, whether this box can
+# actually reach it, and says what to set if not.
+if [ -n "${SUPERVISOR_TOKEN:-}" ] && [ -z "${ALLIUM_SERVICE_UPSTREAMS:-}" ]; then
+    export ALLIUM_SERVICE_UPSTREAMS="8123=homeassistant"
+fi
 if [ -n "$SERVICE_UPSTREAM" ]; then
     export ALLIUM_SERVICE_UPSTREAM="$SERVICE_UPSTREAM"
-elif [ -n "${SUPERVISOR_TOKEN:-}" ] && [ -z "${ALLIUM_SERVICE_UPSTREAMS:-}" ]; then
-    export ALLIUM_SERVICE_UPSTREAMS="8123=homeassistant"
 fi
 
 # ── Start the headless home node ──────────────────────────────────────────

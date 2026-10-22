@@ -2,7 +2,7 @@ name: Allium Connect (Home Node)
 description: Reach Home Assistant, and anything else on your home network, from anywhere. No open ports, end-to-end encrypted.
 slug: allium-connect
 url: https://allium.network/connect
-version: 0.2.0  # keep in sync with Mesh/PACKAGING_VERSION
+version: 0.2.1  # keep in sync with Mesh/PACKAGING_VERSION
 arch:
   - amd64
   - aarch64
@@ -23,9 +23,13 @@ ingress: true
 ingress_port: 8099
 panel_icon: mdi:home-export-outline
 panel_title: Allium Connect
-# Read-only Supervisor access, used once at start-up to learn this add-on's own
-# slug so the status page can link to this Configuration tab.
-hassio_api: true
+# No hassio_api: run.sh's one Supervisor call (/addons/self/info, for the slug
+# the status page links with) is open to every add-on without it.
+# Home Assistant API access, used for ONE thing: keeping a single Allium
+# notification in HA's bell current ("set this External URL in the app", "your
+# token no longer works"). The code only ever calls
+# persistent_notification.create / .dismiss (internal/hanotify).
+homeassistant_api: true
 # Option keys never change between versions: a renamed key would silently drop
 # what people already chose. Order = order in the Configuration tab. The four
 # everyday choices have defaults (always shown); the rest are optional (`?`) and

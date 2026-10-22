@@ -24,7 +24,9 @@ encrypted traffic that neither it nor Allium can read.
    Internal URL as it is and list your home Wi-Fi under *Home network*.
 5. **Test it** with Wi-Fi off on your phone and Allium Connect switched on.
 
-The add-on's page tells you at every step what is working and what is not.
+The add-on's page tells you at every step what is working and what is not. You
+don't even have to open it: the add-on also puts the next step in Home
+Assistant's notifications (the bell), including the External URL to paste.
 
 ## The add-on's page
 
@@ -63,7 +65,7 @@ Most people never need them.
 | **Relay for other Allium users** | off | Forwards other accounts' encrypted traffic when their devices can't connect directly. Only works if this box is reachable from the internet. A normal home with no open ports is not, so for most people this does nothing. |
 | **Run a Tor relay** | off | Runs a public Tor middle relay. Your home IP appears in Tor's public relay list, and you must map port `9001/tcp` in the Network section. |
 | **Host my public websites here** | on | Serves your account's public domains (and `.onion` publishes) from this box. Turn it off if another always-on device, like a NAS, is where your websites actually run. |
-| **Where your services run** | empty | Leave empty: Home Assistant on this box is found automatically. Fill in an IP address only if the page says a service you added can't be reached because it runs on another machine. |
+| **Where your other services run** | empty | Leave empty. Home Assistant is always found on this box, whatever you put here. Fill in an IP address only if the page says another service you added (say, Plex on a NAS) can't be reached because it runs on another machine. |
 | **Show sharing as active at home** | on | Kept for older setups. It only changes a status label in the log; it does not switch any sharing on or off. |
 
 ### Monthly data cap and speed limit
@@ -84,11 +86,11 @@ you.
 
 - **`/dev/net/tun` + `NET_ADMIN`**: the tunnel is a virtual network interface;
   creating it and its routes needs both. They are granted automatically.
-- **Read-only Supervisor access**: used once at start-up to learn the add-on's own
-  name, so the page can link to its Configuration tab.
+- **Home Assistant API access**: used only to show one Allium notification in the
+  bell (create it, or remove it). The add-on never reads your devices or changes
+  anything in Home Assistant, including its own URL settings.
 - **Ingress**: the page is served through Home Assistant's own login. Nothing else
   can open it: not your other devices on the mesh, and not other add-ons.
-- No access to Home Assistant's data or API.
 
 ## Security
 
@@ -113,14 +115,17 @@ with a new mesh address and needs a new connect token.
 
 ## Troubleshooting
 
-The add-on's page names the problem. In short:
+The add-on's page, and its notification in Home Assistant, name the problem. In short:
 
 - **"One step left: link your Allium account"**: no connect token yet. Follow the
   steps on the page.
 - **"Your connect token no longer works"**: it was revoked or expired. Make a new
   one (Dashboard → Network → Add a headless device), paste it, restart.
-- **"This box can't reach Home Assistant"**: put the IP address of the machine
-  running Home Assistant in **Where your services run**, then restart.
+- **"This box can't reach Home Assistant"**: if you changed Home Assistant's port,
+  add Home Assistant again in the dashboard with that port. Otherwise restart the
+  add-on; its Log tab says more.
+- **Another service "can't be reached"**: it runs on another machine. Put that
+  machine's IP address in **Where your other services run**, then restart.
 - **"Connected, but traffic can't flow"**: the network interface could not be
   created. Reinstall the add-on from the Allium repository without changes.
 - **The External URL doesn't show**: add Home Assistant as a service in the

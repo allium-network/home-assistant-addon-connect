@@ -9,7 +9,7 @@ Components under the Mozilla Public License 2.0 (MPL-2.0) are used without
 modification. Their complete source code is available from the upstream
 project at the exact version listed (see each entry's source link).
 
-Generated 2026-10-22 from the shipped binaries (96 components).
+Generated 2026-11-01 from the shipped binaries (96 components).
 
 Summary: Apache-2.0 ×14, Apache-2.0 AND MIT ×1, BSD-2-Clause ×3, BSD-3-Clause ×21, ISC ×3, MIT ×46, MPL-2.0 ×8
 
@@ -3565,9 +3565,9 @@ Copyright 2009 The Go Authors.
 copyright notice, this list of conditions and the following disclaimer
 
 ------------------------------------------------------------------------
-golang.org/x/net  v0.61.0
+golang.org/x/net  v0.62.0
 License: BSD-3-Clause
-Source:  https://pkg.go.dev/golang.org/x/net@v0.61.0
+Source:  https://pkg.go.dev/golang.org/x/net@v0.62.0
 
 [LICENSE: identical text to Go standard library and runtime above]
 Copyright 2009 The Go Authors.

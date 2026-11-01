@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.3
+- **Security update.** Includes the latest fixes to Go's networking library
+  (golang.org/x/net v0.62.0).
+- **Free Allium subdomains get their HTTPS certificate from Allium.** If you publish
+  a service on a free `*.allmesh.net` address, its certificate is now issued for you
+  by Allium, with the old method as a fallback. The address keeps working through
+  the switch.
+- A first certificate that takes long to issue no longer leaves a service without
+  HTTPS: the add-on keeps retrying until it arrives.
+
 ## 0.3.2
 - Housekeeping in the add-on manifest. No functional changes.
 

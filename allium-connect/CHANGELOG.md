@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.6
+- **No more endless "Setting up Home Assistant…".** If your account already has the
+  maximum number of services, the page now says so and tells you what to do, instead
+  of waiting forever. The add-on tries again after its next restart.
+- **Never asks your router to open a port.** The add-on no longer tries UPnP,
+  NAT-PMP or PCP port mappings (your router refused them anyway, filling the log
+  every few minutes). Connections work through hole punching and the relays, as before.
+- **Quieter log for websites served by another device.** If another of your devices
+  already serves one of your domains, this add-on now stays on standby and checks
+  again every 30 minutes, instead of asking (and logging a 409) every few minutes.
+- **Already reach Home Assistant through another device?** (for example a NAS you set
+  up earlier) The page now shows that address, ready to copy into the Home Assistant
+  app.
+
 ## 0.3.5
 - **Change your choices right on the add-on's page.** "Use your home internet when
   away" and "Help censored users" are now switches: flip one and click **Save and

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.5
+- **Change your choices right on the add-on's page.** "Use your home internet when
+  away" and "Help censored users" are now switches: flip one and click **Save and
+  restart**. The page saves the same settings as the Configuration tab, so they
+  always agree.
+- **Set your data cap and speed limit on the page.** No need to go to the dashboard;
+  it is the same account setting, and it applies without a restart.
+- "Your choices" now sits under "Use Home Assistant away from home".
+
 ## 0.3.4
 - **New look for the add-on's page.** It now uses the full width on tablets and
   laptops (two columns), with a summary at the top: account, mesh address, devices

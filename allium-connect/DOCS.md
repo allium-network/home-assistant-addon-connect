@@ -46,10 +46,14 @@ shows:
   whether this box can reach Home Assistant;
 - other services you added on this box, and whether each one answers;
 - your **devices**: online or offline, direct or via a relay;
-- your **choices** (below) and how much was shared this month.
+- your **choices** (below), with switches, and how much was shared this month.
 
-The page only shows things. All settings are changed in the **Configuration** tab,
-and the page has a button to go there.
+You can change the everyday choices right on the page: **Use your home internet
+when away** and **Help censored users**. Flip a switch, then click **Save and
+restart**: the add-on restarts to apply it (remote access pauses for about 20
+seconds). The page writes the same settings the **Configuration** tab shows, so
+both always agree. The monthly data cap and speed limit can be set on the page
+too (no restart needed). The advanced options stay in the Configuration tab.
 
 ## Your choices
 
@@ -78,9 +82,9 @@ Most people never need them.
 
 ### Monthly data cap and speed limit
 
-The cap and speed limit for sharing are set on **allium.network**: Dashboard →
-**Contribution limits** (the add-on's page has a "Set data and speed limits" button),
-not here. They apply to all your devices together. When
+The cap and speed limit for sharing are set on the add-on's page (Sharing limits)
+or on **allium.network**, Dashboard → **Contribution limits**: both change the same
+account setting. They apply to all your devices together. When
 the monthly cap is used up, sharing pauses until the next month; your own remote
 access keeps working. The add-on picks up changes within about 20 seconds.
 

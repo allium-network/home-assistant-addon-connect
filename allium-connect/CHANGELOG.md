@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.7
+- **Also no router requests when hosting a website.** 0.3.6 stopped the add-on's
+  connection setup from asking your router for a port; hosting one of your domains
+  still asked once at start. Now nothing in the add-on asks the router for a port.
+
 ## 0.3.6
 - **No more endless "Setting up Home Assistant…".** If your account already has the
   maximum number of services, the page now says so and tells you what to do, instead

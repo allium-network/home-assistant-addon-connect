@@ -21,7 +21,7 @@ configuration:
       Lends a little bandwidth to people in countries that block the internet,
       helping them reach Tor. Your IP is not listed publicly and nobody's
       traffic leaves the internet from your home. Uses at most the monthly data
-      cap from your dashboard (Contribution card). Off by default.
+      cap set on allium.network (Dashboard, Contribution limits). Off by default.
   exit_tor:
     name: Open .onion sites through home (advanced)
     description: >-

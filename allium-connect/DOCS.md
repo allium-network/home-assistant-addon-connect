@@ -12,10 +12,12 @@ encrypted traffic that neither it nor Allium can read.
 
 1. **Start the add-on** (you've installed it, so you're nearly there): click **Start**,
    then **Open Web UI**.
-2. **Link it to your Allium account.** The page shows a short code. Click **Approve
-   on allium.network**, sign in (or create a free account), check that the device is
-   called `home-assistant`, and approve. The add-on links itself and restarts. No
-   token to copy.
+2. **Link it to your Allium account.** The add-on needs a free Allium account; if you
+   don't have one yet, you make it during this step (about two minutes). The page
+   shows a short code. Click **Approve on allium.network**, then **Sign up** (email,
+   password, confirm the email) or sign in, check that the device is called
+   `home-assistant`, and approve. The add-on links itself and restarts. No token to
+   copy.
 3. **Home Assistant is added for you.** Once linked, the add-on registers Home
    Assistant (port 8123) on your account by itself.
 4. **On your phone:** install **Allium Connect** (App Store / Google Play) and sign
@@ -76,8 +78,9 @@ Most people never need them.
 
 ### Monthly data cap and speed limit
 
-The cap and speed limit for sharing are set in your **allium.network dashboard**
-(the Contribution card), not here. They apply to all your devices together. When
+The cap and speed limit for sharing are set on **allium.network**: Dashboard →
+**Contribution limits** (the add-on's page has a "Set data and speed limits" button),
+not here. They apply to all your devices together. When
 the monthly cap is used up, sharing pauses until the next month; your own remote
 access keeps working. The add-on picks up changes within about 20 seconds.
 

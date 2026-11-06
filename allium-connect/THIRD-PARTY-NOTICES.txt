@@ -1,7 +1,7 @@
-THIRD-PARTY SOFTWARE NOTICES — Allium allium-connect add-on 0.3.3
+THIRD-PARTY SOFTWARE NOTICES — Allium allium-connect add-on 0.3.4
 ========================================================================
 
-Allium allium-connect add-on 0.3.3 includes the open-source components listed below. Each is used
+Allium allium-connect add-on 0.3.4 includes the open-source components listed below. Each is used
 under its own license, reproduced in full in this file. These notices cover
 third-party code only; they do not change the terms of Allium's own software.
 
@@ -9,9 +9,9 @@ Components under the Mozilla Public License 2.0 (MPL-2.0) are used without
 modification. Their complete source code is available from the upstream
 project at the exact version listed (see each entry's source link).
 
-Generated 2026-11-01 from the shipped binaries (96 components).
+Generated 2026-11-06 from the shipped binaries (98 components).
 
-Summary: Apache-2.0 ×14, Apache-2.0 AND MIT ×1, BSD-2-Clause ×3, BSD-3-Clause ×21, ISC ×3, MIT ×46, MPL-2.0 ×8
+Summary: Apache-2.0 ×15, Apache-2.0 AND MIT ×1, BSD-2-Clause ×3, BSD-3-Clause ×22, ISC ×3, MIT ×47, MPL-2.0 ×7
 
 ------------------------------------------------------------------------
 Go standard library and runtime  go1.26.10
@@ -104,9 +104,9 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ------------------------------------------------------------------------
-github.com/RoaringBitmap/roaring  v1.2.3
+github.com/RoaringBitmap/roaring/v2  v2.16.0
 License: Apache-2.0
-Source:  https://pkg.go.dev/github.com/RoaringBitmap/roaring@v1.2.3
+Source:  https://pkg.go.dev/github.com/RoaringBitmap/roaring/v2@v2.16.0
 
 
                                  Apache License
@@ -573,9 +573,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/anacrolix/btree  v0.0.0-20251201064447-d86c3fa41bd8
+github.com/anacrolix/btree  v0.1.1
 License: Apache-2.0
-Source:  https://pkg.go.dev/github.com/anacrolix/btree@v0.0.0-20251201064447-d86c3fa41bd8
+Source:  https://pkg.go.dev/github.com/anacrolix/btree@v0.1.1
 
                                  Apache License
                            Version 2.0, January 2004
@@ -780,9 +780,9 @@ Source:  https://pkg.go.dev/github.com/anacrolix/btree@v0.0.0-20251201064447-d86
    limitations under the License.
 
 ------------------------------------------------------------------------
-github.com/anacrolix/chansync  v0.7.0
+github.com/anacrolix/chansync  v0.8.0
 License: MIT
-Source:  https://pkg.go.dev/github.com/anacrolix/chansync@v0.7.0
+Source:  https://pkg.go.dev/github.com/anacrolix/chansync@v0.8.0
 
 MIT License
 
@@ -1202,9 +1202,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/anacrolix/generics  v0.1.1-0.20251125230353-15d98d46693b
+github.com/anacrolix/generics  v0.2.0
 License: MPL-2.0
-Source:  https://pkg.go.dev/github.com/anacrolix/generics@v0.1.1-0.20251125230353-15d98d46693b
+Source:  https://pkg.go.dev/github.com/anacrolix/generics@v0.2.0
 
 Mozilla Public License Version 2.0
 ==================================
@@ -1581,6 +1581,31 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
   defined by the Mozilla Public License, v. 2.0.
 
 ------------------------------------------------------------------------
+github.com/anacrolix/go-utp  v0.0.0-20260908033909-9f1664acf866
+License: MIT
+Source:  https://pkg.go.dev/github.com/anacrolix/go-utp@v0.0.0-20260908033909-9f1664acf866
+
+Copyright (c) 2010-2013 BitTorrent, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+------------------------------------------------------------------------
 github.com/anacrolix/log  v0.17.1-0.20251118025802-918f1157b7bb
 License: MPL-2.0
 Source:  https://pkg.go.dev/github.com/anacrolix/log@v0.17.1-0.20251118025802-918f1157b7bb
@@ -1605,9 +1630,9 @@ Source:  https://pkg.go.dev/github.com/anacrolix/missinggo/perf@v1.0.0
 Copyright (c) 2015 Matt Joiner
 
 ------------------------------------------------------------------------
-github.com/anacrolix/missinggo/v2  v2.10.0
+github.com/anacrolix/missinggo/v2  v2.11.0
 License: MIT
-Source:  https://pkg.go.dev/github.com/anacrolix/missinggo/v2@v2.10.0
+Source:  https://pkg.go.dev/github.com/anacrolix/missinggo/v2@v2.11.0
 
 [LICENSE: identical text to github.com/anacrolix/envpprof above]
 Copyright (c) 2015 Matt Joiner
@@ -1656,9 +1681,9 @@ Source:  https://pkg.go.dev/github.com/anacrolix/sync@v0.5.5-0.20251119100342-d7
 (c) under Patent Claims infringed by Covered Software in the absence of
 
 ------------------------------------------------------------------------
-github.com/anacrolix/torrent  v1.61.0
+github.com/anacrolix/torrent  v1.61.1-0.20260911233437-76452a2c8a2f
 License: MPL-2.0
-Source:  https://pkg.go.dev/github.com/anacrolix/torrent@v1.61.0
+Source:  https://pkg.go.dev/github.com/anacrolix/torrent@v1.61.1-0.20260911233437-76452a2c8a2f
 
 [LICENSE: identical text to github.com/anacrolix/generics above]
 (c) under Patent Claims infringed by Covered Software in the absence of
@@ -1670,13 +1695,6 @@ Source:  https://pkg.go.dev/github.com/anacrolix/upnp@v0.1.4
 
 [LICENCE: identical text to github.com/anacrolix/generics above]
 (c) under Patent Claims infringed by Covered Software in the absence of
-
-------------------------------------------------------------------------
-github.com/anacrolix/utp  v0.1.0
-License: MPL-2.0
-Source:  https://pkg.go.dev/github.com/anacrolix/utp@v0.1.0
-
-[LICENSE: identical text to github.com/anacrolix/dht/v2 above]
 
 ------------------------------------------------------------------------
 github.com/bahlo/generic-list-go  v0.2.0
@@ -1736,6 +1754,39 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+------------------------------------------------------------------------
+github.com/bits-and-blooms/bitset  v1.24.2
+License: BSD-3-Clause
+Source:  https://pkg.go.dev/github.com/bits-and-blooms/bitset@v1.24.2
+
+Copyright (c) 2014 Will Fitzgerald. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+   * Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.
+   * Neither the name of Google Inc. nor the names of its
+contributors may be used to endorse or promote products derived from
+this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ------------------------------------------------------------------------
 github.com/bradfitz/iter  v0.0.0-20191230175014-e8f45d346db8
@@ -2382,6 +2433,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+------------------------------------------------------------------------
+github.com/mschoch/smat  v0.2.0
+License: Apache-2.0
+Source:  https://pkg.go.dev/github.com/mschoch/smat@v0.2.0
+
+[LICENSE: identical text to github.com/anacrolix/btree above]
+copyright notice that is included in or attached to the work
+copyright license to reproduce, prepare Derivative Works of,
+(c) You must retain, in the Source form of any Derivative Works
+Copyright [yyyy] [name of copyright owner]
 
 ------------------------------------------------------------------------
 github.com/multiformats/go-multihash  v0.2.3
@@ -3547,9 +3609,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 ------------------------------------------------------------------------
-golang.org/x/crypto  v0.58.0
+golang.org/x/crypto  v0.58.1-0.20261009181718-2f1f834330b2
 License: BSD-3-Clause
-Source:  https://pkg.go.dev/golang.org/x/crypto@v0.58.0
+Source:  https://pkg.go.dev/golang.org/x/crypto@v0.58.1-0.20261009181718-2f1f834330b2
 
 [LICENSE: identical text to Go standard library and runtime above]
 Copyright 2009 The Go Authors.

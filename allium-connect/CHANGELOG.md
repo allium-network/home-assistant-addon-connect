@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.4
+- **New look for the add-on's page.** It now uses the full width on tablets and
+  laptops (two columns), with a summary at the top: account, mesh address, devices
+  online and services reachable. It follows Home Assistant's light or dark theme, and
+  shows this month's sharing as a progress bar.
+- **"Change settings" works again.** Newer Home Assistant versions moved add-on pages
+  (Add-ons are now Apps), so the button opened a "404: Not Found" page. It now opens
+  this add-on's Configuration tab on both newer and older Home Assistant versions.
+- **Clearer first start.** The link screen now says up front that you need a free
+  Allium account, and walks you through making one.
+- **Easier to find your settings.** The add-on's page now says where each setting lives:
+  switches in the Configuration tab, the monthly data cap and speed limit on
+  allium.network (with a button to go there).
+
 ## 0.3.3
 - **Security update.** Includes the latest fixes to Go's networking library
   (golang.org/x/net v0.62.0).

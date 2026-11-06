@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.8
+- **Says when this box waits for your approval.** If your account uses a device list
+  (your devices only accept devices you approved), a new or reinstalled add-on is
+  refused by your other devices until you approve it. The page now says so, shows this
+  box's key, and tells you how to approve it on your signing computer.
+
 ## 0.3.7
 - **Also no router requests when hosting a website.** 0.3.6 stopped the add-on's
   connection setup from asking your router for a port; hosting one of your domains

@@ -2,7 +2,7 @@ name: Allium Connect (Home Node)
 description: Reach Home Assistant, and anything else on your home network, from anywhere. No open ports, end-to-end encrypted.
 slug: allium-connect
 url: https://allium.network/connect
-version: 0.3.8
+version: 0.3.9
 arch:
   - amd64
   - aarch64
@@ -65,4 +65,4 @@ schema:
 ports:
   9001/tcp: null
 ports_description:
-  9001/tcp: Tor relay port — only needed if you turn on "Run a Tor relay"
+  9001/tcp: Tor relay port, only needed if you turn on "Run a Tor relay"

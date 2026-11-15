@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.9
+- **This box confirms Tor mode.** When one of your devices chooses Tor, this box now
+  tells it the moment Tor is really in place. The next phone apps wait for that
+  answer before any traffic leaves, so nothing goes out without Tor by accident.
+- **Safer Tor for your devices.** Traffic that leaves through Tor on this box can no
+  longer carry BitTorrent, is kept to common ports, and has a speed limit so one
+  device cannot use all of it.
+- **"Connected" means traffic really flows.** The status comes from proof of traffic
+  with your devices and the relays, and no longer from a successful sign-in alone.
+- Same engine as Allium Connect 1.0.88.
+
 ## 0.3.8
 - **Says when this box waits for your approval.** If your account uses a device list
   (your devices only accept devices you approved), a new or reinstalled add-on is
@@ -125,7 +136,7 @@
   at random, so reaching Home Assistant / Plex / your NAS from a phone or laptop on
   a restrictive network no longer intermittently fails to connect.
 - Built on the current Allium Connect engine, including its latest security updates.
-- The node no longer runs its own update check — the Supervisor delivers add-on
+- The node no longer runs its own update check: the Supervisor delivers add-on
   updates.
 
 ## 0.1.10

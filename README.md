@@ -1,4 +1,4 @@
-# Allium Connect (Home Node) — Home Assistant Add-on Repository
+# Allium Connect (Home Node): Home Assistant Add-on Repository
 
 > **Your home, anywhere, without opening a single port.**
 

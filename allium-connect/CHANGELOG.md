@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.10
+- **One more router request closed.** The part of Allium that carries shared and
+  hosted services could still ask your router to open a port by itself. It no longer
+  does, unless you turned port mapping on yourself.
+- **Leaving "Exit through home" gives back your own DNS settings.** Devices that use
+  this box as their exit now restore exactly the DNS settings they had before, also
+  after a restart or a crash.
+- **Share links need a yes on computers.** A computer now asks its user once before
+  it uses share links, because they show its IP address. This box keeps working as
+  before; the other side may have to allow share links first.
+- Same engine as Allium Connect 1.0.90.
+
 ## 0.3.9
 - **This box confirms Tor mode.** When one of your devices chooses Tor, this box now
   tells it the moment Tor is really in place. The next phone apps wait for that

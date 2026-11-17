@@ -1,7 +1,7 @@
-THIRD-PARTY SOFTWARE NOTICES — Allium allium-connect add-on 0.3.9
+THIRD-PARTY SOFTWARE NOTICES — Allium allium-connect add-on 0.3.10
 ========================================================================
 
-Allium allium-connect add-on 0.3.9 includes the open-source components listed below. Each is used
+Allium allium-connect add-on 0.3.10 includes the open-source components listed below. Each is used
 under its own license, reproduced in full in this file. These notices cover
 third-party code only; they do not change the terms of Allium's own software.
 
@@ -9,7 +9,7 @@ Components under the Mozilla Public License 2.0 (MPL-2.0) are used without
 modification. Their complete source code is available from the upstream
 project at the exact version listed (see each entry's source link).
 
-Generated 2026-11-15 from the shipped binaries (98 components).
+Generated 2026-11-17 from the shipped binaries (98 components).
 
 Summary: Apache-2.0 ×15, Apache-2.0 AND MIT ×1, BSD-2-Clause ×3, BSD-3-Clause ×22, ISC ×3, MIT ×47, MPL-2.0 ×7
 

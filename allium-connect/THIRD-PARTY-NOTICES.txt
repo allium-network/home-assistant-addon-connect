@@ -1,7 +1,7 @@
-THIRD-PARTY SOFTWARE NOTICES — Allium allium-connect add-on 0.3.10
+THIRD-PARTY SOFTWARE NOTICES — Allium allium-connect add-on 0.3.11
 ========================================================================
 
-Allium allium-connect add-on 0.3.10 includes the open-source components listed below. Each is used
+Allium allium-connect add-on 0.3.11 includes the open-source components listed below. Each is used
 under its own license, reproduced in full in this file. These notices cover
 third-party code only; they do not change the terms of Allium's own software.
 
@@ -9,9 +9,9 @@ Components under the Mozilla Public License 2.0 (MPL-2.0) are used without
 modification. Their complete source code is available from the upstream
 project at the exact version listed (see each entry's source link).
 
-Generated 2026-11-17 from the shipped binaries (98 components).
+Generated 2026-11-18 from the shipped binaries (98 components).
 
-Summary: Apache-2.0 ×15, Apache-2.0 AND MIT ×1, BSD-2-Clause ×3, BSD-3-Clause ×22, ISC ×3, MIT ×47, MPL-2.0 ×7
+Summary: Apache-2.0 ×15, BSD-2-Clause ×3, BSD-3-Clause ×22, ISC ×4, MIT ×47, MPL-2.0 ×7
 
 ------------------------------------------------------------------------
 Go standard library and runtime  go1.26.11
@@ -1630,9 +1630,9 @@ Source:  https://pkg.go.dev/github.com/anacrolix/missinggo/perf@v1.0.0
 Copyright (c) 2015 Matt Joiner
 
 ------------------------------------------------------------------------
-github.com/anacrolix/missinggo/v2  v2.11.0
+github.com/anacrolix/missinggo/v2  v2.12.0
 License: MIT
-Source:  https://pkg.go.dev/github.com/anacrolix/missinggo/v2@v2.11.0
+Source:  https://pkg.go.dev/github.com/anacrolix/missinggo/v2@v2.12.0
 
 [LICENSE: identical text to github.com/anacrolix/envpprof above]
 Copyright (c) 2015 Matt Joiner
@@ -1681,9 +1681,9 @@ Source:  https://pkg.go.dev/github.com/anacrolix/sync@v0.5.5-0.20251119100342-d7
 (c) under Patent Claims infringed by Covered Software in the absence of
 
 ------------------------------------------------------------------------
-github.com/anacrolix/torrent  v1.61.1-0.20260911233437-76452a2c8a2f
+github.com/anacrolix/torrent  v1.63.0
 License: MPL-2.0
-Source:  https://pkg.go.dev/github.com/anacrolix/torrent@v1.61.1-0.20260911233437-76452a2c8a2f
+Source:  https://pkg.go.dev/github.com/anacrolix/torrent@v1.63.0
 
 [LICENSE: identical text to github.com/anacrolix/generics above]
 (c) under Patent Claims infringed by Covered Software in the absence of
@@ -1822,9 +1822,9 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ------------------------------------------------------------------------
-github.com/cespare/xxhash  v1.1.0
+github.com/cespare/xxhash/v2  v2.3.0
 License: MIT
-Source:  https://pkg.go.dev/github.com/cespare/xxhash@v1.1.0
+Source:  https://pkg.go.dev/github.com/cespare/xxhash/v2@v2.3.0
 
 Copyright (c) 2016 Caleb Spare
 
@@ -1850,12 +1850,23 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/cespare/xxhash/v2  v2.3.0
-License: MIT
-Source:  https://pkg.go.dev/github.com/cespare/xxhash/v2@v2.3.0
+github.com/coder/websocket  v1.8.15
+License: ISC
+Source:  https://pkg.go.dev/github.com/coder/websocket@v1.8.15
 
-[LICENSE.txt: identical text to github.com/cespare/xxhash above]
-Copyright (c) 2016 Caleb Spare
+Copyright (c) 2025 Coder
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ------------------------------------------------------------------------
 github.com/davecgh/go-spew  v1.1.1
@@ -2344,9 +2355,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/klauspost/cpuid/v2  v2.2.6
+github.com/klauspost/cpuid/v2  v2.4.0
 License: MIT
-Source:  https://pkg.go.dev/github.com/klauspost/cpuid/v2@v2.2.6
+Source:  https://pkg.go.dev/github.com/klauspost/cpuid/v2@v2.4.0
 
 The MIT License (MIT)
 
@@ -2371,9 +2382,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/miekg/dns  v1.1.65
+github.com/miekg/dns  v1.1.72
 License: BSD-3-Clause
-Source:  https://pkg.go.dev/github.com/miekg/dns@v1.1.65
+Source:  https://pkg.go.dev/github.com/miekg/dns@v1.1.72
 
 BSD 3-Clause License
 
@@ -2583,24 +2594,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/pion/datachannel  v1.6.0
+github.com/pion/datachannel  v1.6.2
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/datachannel@v1.6.0
-
-MIT License
-
-Copyright (c) 2023 The Pion community <https://pion.ly>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-------------------------------------------------------------------------
-github.com/pion/dtls/v3  v3.1.15
-License: MIT
-Source:  https://pkg.go.dev/github.com/pion/dtls/v3@v3.1.15
+Source:  https://pkg.go.dev/github.com/pion/datachannel@v1.6.2
 
 MIT License
 
@@ -2613,33 +2609,48 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/pion/ice/v4  v4.2.0
+github.com/pion/dtls/v3  v3.1.15
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/ice/v4@v4.2.0
+Source:  https://pkg.go.dev/github.com/pion/dtls/v3@v3.1.15
 
 [LICENSE: identical text to github.com/pion/datachannel above]
-Copyright (c) 2023 The Pion community <https://pion.ly>
+Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
-github.com/pion/interceptor  v0.1.43
+github.com/pion/ice/v4  v4.4.2
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/interceptor@v0.1.43
+Source:  https://pkg.go.dev/github.com/pion/ice/v4@v4.4.2
 
 [LICENSE: identical text to github.com/pion/datachannel above]
-Copyright (c) 2023 The Pion community <https://pion.ly>
+Copyright (c) 2026 The Pion community <https://pion.ly>
+
+------------------------------------------------------------------------
+github.com/pion/interceptor  v0.1.48
+License: MIT
+Source:  https://pkg.go.dev/github.com/pion/interceptor@v0.1.48
+
+[LICENSE: identical text to github.com/pion/datachannel above]
+Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
 github.com/pion/logging  v0.2.4
 License: MIT
 Source:  https://pkg.go.dev/github.com/pion/logging@v0.2.4
 
-[LICENSE: identical text to github.com/pion/datachannel above]
+MIT License
+
 Copyright (c) 2023 The Pion community <https://pion.ly>
 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 ------------------------------------------------------------------------
-github.com/pion/mdns/v2  v2.1.0
+github.com/pion/mdns/v2  v2.2.0
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/mdns/v2@v2.1.0
+Source:  https://pkg.go.dev/github.com/pion/mdns/v2@v2.2.0
 
 MIT License
 
@@ -2691,17 +2702,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/pion/rtcp  v1.2.16
+github.com/pion/rtcp  v1.2.17
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/rtcp@v1.2.16
+Source:  https://pkg.go.dev/github.com/pion/rtcp@v1.2.17
 
 [LICENSE: identical text to github.com/pion/datachannel above]
-Copyright (c) 2023 The Pion community <https://pion.ly>
+Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
-github.com/pion/rtp  v1.10.1
+github.com/pion/rtp  v1.10.5
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/rtp@v1.10.1
+Source:  https://pkg.go.dev/github.com/pion/rtp@v1.10.5
 
 MIT License
 
@@ -2714,35 +2725,43 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/pion/sctp  v1.9.2
+github.com/pion/sctp  v1.11.1
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/sctp@v1.9.2
+Source:  https://pkg.go.dev/github.com/pion/sctp@v1.11.1
 
 [LICENSE: identical text to github.com/pion/datachannel above]
-Copyright (c) 2023 The Pion community <https://pion.ly>
+Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
-github.com/pion/sdp/v3  v3.0.17
+github.com/pion/sdp/v3  v3.0.19
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/sdp/v3@v3.0.17
+Source:  https://pkg.go.dev/github.com/pion/sdp/v3@v3.0.19
 
 [LICENSE: identical text to github.com/pion/datachannel above]
-Copyright (c) 2023 The Pion community <https://pion.ly>
+Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
-github.com/pion/srtp/v3  v3.0.10
+github.com/pion/srtp/v3  v3.0.13
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/srtp/v3@v3.0.10
+Source:  https://pkg.go.dev/github.com/pion/srtp/v3@v3.0.13
 
 [LICENSE: identical text to github.com/pion/datachannel above]
-Copyright (c) 2023 The Pion community <https://pion.ly>
+Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
 github.com/pion/stun/v3  v3.1.7
 License: MIT
 Source:  https://pkg.go.dev/github.com/pion/stun/v3@v3.1.7
 
-[LICENSE: identical text to github.com/pion/dtls/v3 above]
+[LICENSE: identical text to github.com/pion/datachannel above]
+Copyright (c) 2026 The Pion community <https://pion.ly>
+
+------------------------------------------------------------------------
+github.com/pion/stun/v4  v4.0.0
+License: MIT
+Source:  https://pkg.go.dev/github.com/pion/stun/v4@v4.0.0
+
+[LICENSE: identical text to github.com/pion/datachannel above]
 Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
@@ -2750,7 +2769,7 @@ github.com/pion/transport/v4  v4.1.0
 License: MIT
 Source:  https://pkg.go.dev/github.com/pion/transport/v4@v4.1.0
 
-[LICENSE: identical text to github.com/pion/dtls/v3 above]
+[LICENSE: identical text to github.com/pion/datachannel above]
 Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
@@ -2758,24 +2777,24 @@ github.com/pion/transport/v5  v5.0.0
 License: MIT
 Source:  https://pkg.go.dev/github.com/pion/transport/v5@v5.0.0
 
-[LICENSE: identical text to github.com/pion/dtls/v3 above]
+[LICENSE: identical text to github.com/pion/datachannel above]
 Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
-github.com/pion/turn/v4  v4.1.4
+github.com/pion/turn/v5  v5.1.0
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/turn/v4@v4.1.4
+Source:  https://pkg.go.dev/github.com/pion/turn/v5@v5.1.0
 
 [LICENSE: identical text to github.com/pion/datachannel above]
-Copyright (c) 2023 The Pion community <https://pion.ly>
+Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
-github.com/pion/webrtc/v4  v4.2.3-securityfix
+github.com/pion/webrtc/v4  v4.2.20
 License: MIT
-Source:  https://pkg.go.dev/github.com/pion/webrtc/v4@v4.2.3-securityfix
+Source:  https://pkg.go.dev/github.com/pion/webrtc/v4@v4.2.20
 
 [LICENSE: identical text to github.com/pion/datachannel above]
-Copyright (c) 2023 The Pion community <https://pion.ly>
+Copyright (c) 2026 The Pion community <https://pion.ly>
 
 ------------------------------------------------------------------------
 github.com/pkg/errors  v0.9.1
@@ -2807,9 +2826,9 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ------------------------------------------------------------------------
-github.com/prometheus/client_golang  v1.23.2
+github.com/prometheus/client_golang  v1.24.1
 License: Apache-2.0
-Source:  https://pkg.go.dev/github.com/prometheus/client_golang@v1.23.2
+Source:  https://pkg.go.dev/github.com/prometheus/client_golang@v1.24.1
 
 [LICENSE: identical text to github.com/anacrolix/btree above]
 copyright notice that is included in or attached to the work
@@ -2856,9 +2875,9 @@ This product includes software developed at
 SoundCloud Ltd. (http://soundcloud.com/).
 
 ------------------------------------------------------------------------
-github.com/prometheus/common  v0.66.1
+github.com/prometheus/common  v0.70.1
 License: Apache-2.0
-Source:  https://pkg.go.dev/github.com/prometheus/common@v0.66.1
+Source:  https://pkg.go.dev/github.com/prometheus/common@v0.70.1
 
 [LICENSE: identical text to github.com/anacrolix/btree above]
 copyright notice that is included in or attached to the work
@@ -2874,9 +2893,9 @@ This product includes software developed at
 SoundCloud Ltd. (http://soundcloud.com/).
 
 ------------------------------------------------------------------------
-github.com/prometheus/procfs  v0.16.1
+github.com/prometheus/procfs  v0.21.1
 License: Apache-2.0
-Source:  https://pkg.go.dev/github.com/prometheus/procfs@v0.16.1
+Source:  https://pkg.go.dev/github.com/prometheus/procfs@v0.21.1
 
 [LICENSE: identical text to github.com/anacrolix/btree above]
 copyright notice that is included in or attached to the work
@@ -2996,9 +3015,9 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ------------------------------------------------------------------------
-github.com/theodorsm/covert-dtls  v1.4.1
+github.com/theodorsm/covert-dtls  v1.5.1
 License: MIT
-Source:  https://pkg.go.dev/github.com/theodorsm/covert-dtls@v1.4.1
+Source:  https://pkg.go.dev/github.com/theodorsm/covert-dtls@v1.5.1
 
 MIT License
 
@@ -3047,9 +3066,9 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/txthinking/runnergroup  v0.0.0-20210608031112-152c7c4432bf
+github.com/txthinking/runnergroup  v0.0.0-20250224021307-5864ffeb65ae
 License: MIT
-Source:  https://pkg.go.dev/github.com/txthinking/runnergroup@v0.0.0-20210608031112-152c7c4432bf
+Source:  https://pkg.go.dev/github.com/txthinking/runnergroup@v0.0.0-20250224021307-5864ffeb65ae
 
 The MIT License (MIT)
 
@@ -3074,9 +3093,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ------------------------------------------------------------------------
-github.com/txthinking/socks5  v0.0.0-20251011041537-5c31f201a10e
+github.com/txthinking/socks5  v0.0.0-20260601051520-339b044ab0eb
 License: MIT
-Source:  https://pkg.go.dev/github.com/txthinking/socks5@v0.0.0-20251011041537-5c31f201a10e
+Source:  https://pkg.go.dev/github.com/txthinking/socks5@v0.0.0-20260601051520-339b044ab0eb
 
 MIT License
 
@@ -3200,9 +3219,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ================================================================================
 
 ------------------------------------------------------------------------
-gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2  v2.12.1
+gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2  v2.15.3
 License: BSD-3-Clause
-Source:  https://pkg.go.dev/gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2@v2.12.1
+Source:  https://pkg.go.dev/gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2@v2.15.3
 
               This file contains the license for "Snowflake"
      a free software project which provides a WebRTC pluggable transport.
@@ -3551,67 +3570,9 @@ Copyright 2009 The Go Authors.
 copyright notice, this list of conditions and the following disclaimer
 
 ------------------------------------------------------------------------
-go.yaml.in/yaml/v2  v2.4.2
-License: Apache-2.0 AND MIT
-Source:  https://pkg.go.dev/go.yaml.in/yaml/v2@v2.4.2
-
-[LICENSE: identical text to github.com/go-logr/logr above]
-copyright notice that is included in or attached to the work
-copyright license to reproduce, prepare Derivative Works of,
-(c) You must retain, in the Source form of any Derivative Works
-Copyright {yyyy} {name of copyright owner}
-
-The following files were ported to Go from C files of libyaml, and thus
-are still covered by their original copyright and license:
-
-    apic.go
-    emitterc.go
-    parserc.go
-    readerc.go
-    scannerc.go
-    writerc.go
-    yamlh.go
-    yamlprivateh.go
-
-Copyright (c) 2006 Kirill Simonov
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
---- NOTICE ---
-Copyright 2011-2016 Canonical Ltd.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-------------------------------------------------------------------------
-golang.org/x/crypto  v0.58.1-0.20261009181718-2f1f834330b2
+golang.org/x/crypto  v0.59.0
 License: BSD-3-Clause
-Source:  https://pkg.go.dev/golang.org/x/crypto@v0.58.1-0.20261009181718-2f1f834330b2
+Source:  https://pkg.go.dev/golang.org/x/crypto@v0.59.0
 
 [LICENSE: identical text to Go standard library and runtime above]
 Copyright 2009 The Go Authors.
@@ -3636,36 +3597,36 @@ Copyright 2009 The Go Authors.
 copyright notice, this list of conditions and the following disclaimer
 
 ------------------------------------------------------------------------
-golang.org/x/sync  v0.24.0
+golang.org/x/sync  v0.25.0
 License: BSD-3-Clause
-Source:  https://pkg.go.dev/golang.org/x/sync@v0.24.0
+Source:  https://pkg.go.dev/golang.org/x/sync@v0.25.0
 
 [LICENSE: identical text to Go standard library and runtime above]
 Copyright 2009 The Go Authors.
 copyright notice, this list of conditions and the following disclaimer
 
 ------------------------------------------------------------------------
-golang.org/x/sys  v0.49.0
+golang.org/x/sys  v0.50.0
 License: BSD-3-Clause
-Source:  https://pkg.go.dev/golang.org/x/sys@v0.49.0
+Source:  https://pkg.go.dev/golang.org/x/sys@v0.50.0
 
 [LICENSE: identical text to Go standard library and runtime above]
 Copyright 2009 The Go Authors.
 copyright notice, this list of conditions and the following disclaimer
 
 ------------------------------------------------------------------------
-golang.org/x/text  v0.43.0
+golang.org/x/text  v0.44.0
 License: BSD-3-Clause
-Source:  https://pkg.go.dev/golang.org/x/text@v0.43.0
+Source:  https://pkg.go.dev/golang.org/x/text@v0.44.0
 
 [LICENSE: identical text to Go standard library and runtime above]
 Copyright 2009 The Go Authors.
 copyright notice, this list of conditions and the following disclaimer
 
 ------------------------------------------------------------------------
-golang.org/x/time  v0.14.0
+golang.org/x/time  v0.15.0
 License: BSD-3-Clause
-Source:  https://pkg.go.dev/golang.org/x/time@v0.14.0
+Source:  https://pkg.go.dev/golang.org/x/time@v0.15.0
 
 [LICENSE: identical text to Go standard library and runtime above]
 Copyright 2009 The Go Authors.
@@ -3695,9 +3656,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ------------------------------------------------------------------------
-google.golang.org/protobuf  v1.36.10
+google.golang.org/protobuf  v1.36.12
 License: BSD-3-Clause
-Source:  https://pkg.go.dev/google.golang.org/protobuf@v1.36.10
+Source:  https://pkg.go.dev/google.golang.org/protobuf@v1.36.12
 
 Copyright (c) 2018 The Go Authors. All rights reserved.
 

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.11
+- **Snowflake helps more people.** If you turned on "Help censored users (Tor Snowflake)", this box
+  asked Tor's broker too often and most of its requests were refused. It now waits as
+  long as the broker asks, so its requests are accepted.
+- **Shared and hosted services start faster and close cleanly.** Each one used to keep
+  a small database file open until the add-on restarted, and the next one waited a
+  second for it.
+- **Updated building blocks.** Newer versions of the networking and Tor helper
+  libraries, including their security fixes.
+- Same engine as Allium Connect 1.0.91.
+
 ## 0.3.10
 - **One more router request closed.** The part of Allium that carries shared and
   hosted services could still ask your router to open a port by itself. It no longer

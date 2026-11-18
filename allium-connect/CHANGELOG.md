@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.12
+- **No change you will notice.** This version puts the code for Allium's own private
+  lookup network in place. It is switched off and stays off until it is announced.
+- Same engine as Allium Connect 1.0.92.
+
 ## 0.3.11
 - **Snowflake helps more people.** If you turned on "Help censored users (Tor Snowflake)", this box
   asked Tor's broker too often and most of its requests were refused. It now waits as

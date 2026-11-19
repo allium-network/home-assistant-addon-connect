@@ -32,7 +32,7 @@ encrypted traffic that neither it nor Allium can read.
 The add-on's page tells you at every step what is working and what is not, and the
 next step also appears in Home Assistant's notifications (the bell).
 
-**Prefer a token?** On allium.network: Dashboard → Network → Add a headless device,
+**Prefer a token?** On allium.network: Dashboard → Network → Add a home node,
 copy the token, paste it under **Connect token** in the Configuration tab, Save,
 Restart.
 

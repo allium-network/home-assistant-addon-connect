@@ -58,6 +58,9 @@ chmod 700 "$ALLIUM_STATE_DIR"
 # add-ons). It also carries the first-start instructions when no token is set.
 export ALLIUM_STATUS_PANEL_ADDR=":8099"
 export ALLIUM_STATUS_PANEL_ALLOW="172.30.32.2"
+# The ingress proxy authenticates the user and forwards the browser's Host (the
+# Home Assistant address), so the page's DNS rebinding guard skips only it.
+export ALLIUM_STATUS_PANEL_PROXY="172.30.32.2"
 # The page links to this add-on's Configuration tab, which needs the real slug
 # (a repository install is "<repo-hash>_allium-connect").
 if [ -n "${SUPERVISOR_TOKEN:-}" ]; then

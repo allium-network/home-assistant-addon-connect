@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.14
+- **Safer status page.** The page now only answers when it is opened through
+  Home Assistant or by this box's own address. A website you visit can no longer
+  reach it behind your back.
+- **Choose your connections on the page.** "Connections to other members" can be
+  set on the status page as well as in the Configuration tab. It stays "Relays
+  only" unless you change it, and the page tells you when a choice is saved but
+  not active on the network yet.
+- "Private lookup network" is still not open in the add-on; that option is
+  ignored until an update announces it.
+- Same engine as Allium Connect 1.0.95.
+
 ## 0.3.13
 - **Quieter and steadier.** This box no longer rebuilds its connections every few
   minutes when a computer on your account is asleep. It now only does that when

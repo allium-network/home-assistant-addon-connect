@@ -66,6 +66,16 @@ The Configuration tab shows four options:
 | **Use your home internet when away** | off | Your phone and laptop can send all their internet traffic through your home connection, as if you were home. Only your own devices can use it. Not anonymity: your internet provider still sees the traffic. |
 | **Help censored users (Tor Snowflake)** | off | Lends a little bandwidth so people in countries that block the internet can reach Tor. Your IP is not listed publicly, and nobody's traffic leaves the internet from your home. Stops at your monthly data cap. |
 
+### Private lookup network
+
+- **Private lookup network** (off by default): this box helps your devices find each other through Allium's own lookup network instead of the public one. It also has to be turned on for this box on allium.network (Dashboard, Network). Anyone can join the private lookup network. Other members do not see your home's internet address unless you allow direct connections. **Not open yet:** leave it off. Until an add-on update announces the private lookup network, this option is ignored.
+- **Connections to other members** (relays by default), set here only:
+  - **relays**: always through Allium's relays.
+  - **fallback**: relays, direct only if the relays cannot be reached. A new direct path still needs our servers.
+  - **direct**: direct when possible.
+
+  With fallback or direct, members' home nodes can see your home's internet address. A direct connection forms only when the other home allows it too. The add-on's page shows the current choice.
+
 ### Advanced options
 
 These are hidden until you click **Show unused optional configuration options**.

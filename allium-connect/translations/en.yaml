@@ -22,6 +22,24 @@ configuration:
       helping them reach Tor. Your IP is not listed publicly and nobody's
       traffic leaves the internet from your home. Uses at most the monthly data
       cap set on allium.network (Dashboard, Contribution limits). Off by default.
+  private_lookup:
+    name: Private lookup network
+    description: >-
+      Lets this box help your devices find each other through Allium's own
+      lookup network instead of the public one. Anyone can join the private
+      lookup network. Other members do not see your home's internet address
+      unless you allow direct connections below. Off by default. Not open
+      yet: leave it off. Until an add-on update announces the private lookup
+      network, this option is ignored.
+  connections:
+    name: Connections to other members
+    description: >-
+      "relays": always through Allium's relays; other members never see your
+      home's internet address. "fallback": relays, direct only if the relays
+      cannot be reached; then members' home nodes can see your home's internet
+      address, and a new direct path still needs our servers. "direct": direct
+      when possible; members' home nodes can see your home's internet address.
+      Relays by default.
   exit_tor:
     name: Open .onion sites through home (advanced)
     description: >-
@@ -53,6 +71,10 @@ configuration:
     description: >-
       Kept for older setups; it only changes the status shown in the log. It
       does not switch any sharing on or off. Leave it alone.
+  private_lookup_seeds:
+    name: Private lookup network seeds (advanced)
+    description: >-
+      Leave empty unless Allium support gives you addresses to put here.
   service_upstream:
     name: Where your other services run (advanced)
     description: >-

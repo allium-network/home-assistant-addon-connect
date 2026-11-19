@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.13
+- **Quieter and steadier.** This box no longer rebuilds its connections every few
+  minutes when a computer on your account is asleep. It now only does that when
+  something that should always be on goes silent.
+- **Two new options that do nothing yet.** "Private lookup network" and
+  "Connections to other members" are for Allium's own lookup network, which is not
+  open yet. Leave them as they are; the first one is ignored until an add-on
+  update announces it.
+- Same engine as Allium Connect 1.0.94.
+
 ## 0.3.12
 - **No change you will notice.** This version puts the code for Allium's own private
   lookup network in place. It is switched off and stays off until it is announced.

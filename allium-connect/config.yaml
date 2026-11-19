@@ -2,7 +2,7 @@ name: Allium Connect (Home Node)
 description: Reach Home Assistant, and anything else on your home network, from anywhere. No open ports, end-to-end encrypted.
 slug: allium-connect
 url: https://allium.network/connect
-version: 0.3.12
+version: 0.3.13
 arch:
   - amd64
   - aarch64
@@ -39,11 +39,21 @@ options:
   device_name: home-assistant
   advertise_exit: false
   snowflake: false
+  private_lookup: false
+  connections: relays
 schema:
   connect_token: password
   device_name: str
   advertise_exit: bool
   snowflake: bool
+  # private_lookup: join the private lookup network (the private DHT). Off by
+  # default. Ignored by run.sh (PRIVATE_LOOKUP_OPEN=false) until the add-on
+  # release that announces the network; then it also needs this box opted in
+  # on the dashboard.
+  private_lookup: bool
+  # connections: this box's path choice toward members of other accounts, set
+  # here only (signed into the node's binding). relays is the default.
+  connections: list(relays|fallback|direct)
   # ── Advanced (hidden until used) ──
   # exit_tor: also detour .onion sites through a local Tor client (implies the
   # Home exit; your ISP then sees Tor connections). Same-account only.
@@ -62,6 +72,9 @@ schema:
   contribute_home: bool?
   # service_upstream: where registered services listen, when not on this box.
   service_upstream: str?
+  # private_lookup_seeds: the network's seed addresses (mesh addresses,
+  # comma-separated), only when told to set them.
+  private_lookup_seeds: str?
 ports:
   9001/tcp: null
 ports_description:

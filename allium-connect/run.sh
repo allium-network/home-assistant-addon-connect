@@ -27,6 +27,9 @@ if [ -f "$CONFIG_PATH" ]; then
     # jq's // treats an explicit `false` as empty — spell it out (see contribute_home).
     HOST_DOMAINS=$(jq -r 'if .host_domains == false then "false" else "true" end' "$CONFIG_PATH")
     SERVICE_UPSTREAM=$(jq -r '.service_upstream // ""' "$CONFIG_PATH")
+    PRIVATE_LOOKUP=$(jq -r '.private_lookup // false' "$CONFIG_PATH")
+    CONNECTIONS=$(jq -r '.connections // "relays"' "$CONFIG_PATH")
+    PRIVATE_LOOKUP_SEEDS=$(jq -r '.private_lookup_seeds // ""' "$CONFIG_PATH")
 else
     CONNECT_TOKEN=""
     DEVICE_NAME="home-assistant"
@@ -38,6 +41,9 @@ else
     EXIT_TOR=false
     HOST_DOMAINS=true
     SERVICE_UPSTREAM=""
+    PRIVATE_LOOKUP=false
+    CONNECTIONS=relays
+    PRIVATE_LOOKUP_SEEDS=""
 fi
 
 # ── State dir (device identity: connect token, WG key, identity key) ─────
@@ -173,6 +179,31 @@ fi
 if [ "$HOST_DOMAINS" = "false" ]; then
     export ALLIUM_INGRESS_HOSTING="0"
 fi
+
+# ── Private lookup network (default OFF) and the path choice (default relays) ─
+# private_lookup=true sets ALLIUM_GATED_DHT=1 (the node's private DHT; it also
+# needs a certificate, which the backend issues only after the owner opted this
+# box in on the dashboard). connections is this box's path choice toward
+# members of other accounts, set HERE only and signed into the node's binding:
+# relays (default), fallback, direct; anything else is relays in the node.
+#
+# PRIVATE_LOOKUP_OPEN: the add-on passes private_lookup on ONLY when this is
+# true. It stays false until certificate issuing is open and announced, and is
+# flipped in that add-on release. Why: a node with ALLIUM_GATED_DHT on but no
+# certificate runs no DHT proxy, so its backend-down rendezvous goes dormant
+# (it never falls back to the public DHT). Checking the backend from here
+# instead would need the device's own credential in shell; a release is the
+# announcement anyway.
+PRIVATE_LOOKUP_OPEN=false
+if [ "$PRIVATE_LOOKUP" = "true" ] && [ "$PRIVATE_LOOKUP_OPEN" != "true" ]; then
+    echo "[allium-connect] Private lookup network is not open yet: the option is ignored until an add-on update announces it."
+    PRIVATE_LOOKUP=false
+fi
+if [ "$PRIVATE_LOOKUP" = "true" ]; then
+    export ALLIUM_GATED_DHT="1"
+    [ -n "$PRIVATE_LOOKUP_SEEDS" ] && export ALLIUM_GATED_SEEDS="$PRIVATE_LOOKUP_SEEDS"
+fi
+export ALLIUM_OVERLAY_PATHS="$CONNECTIONS"
 
 # ── Where registered services live ────────────────────────────────────────
 # Home Assistant (8123) ALWAYS runs on this box, so it is always reached by its

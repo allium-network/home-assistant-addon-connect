@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.17
+- **Quieter on the public internet.** This box no longer searches the public
+  BitTorrent network for extra STUN servers (the servers that tell it its own
+  internet address). It uses Allium's own list, which was always tried first.
+  That search was one of the last things that showed "Allium runs here" to the
+  public network.
+- Same engine as Allium Connect 1.0.97.
+
 ## 0.3.16
 - **The private lookup network is open.** Turn on "Private lookup network" in
   the Configuration tab, and for this box on allium.network (Dashboard,

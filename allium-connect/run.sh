@@ -191,13 +191,13 @@ fi
 # relays (default), fallback, direct; anything else is relays in the node.
 #
 # PRIVATE_LOOKUP_OPEN: the add-on passes private_lookup on ONLY when this is
-# true. It stays false until certificate issuing is open and announced, and is
-# flipped in that add-on release. Why: a node with ALLIUM_GATED_DHT on but no
-# certificate runs no DHT proxy, so its backend-down rendezvous goes dormant
-# (it never falls back to the public DHT). Checking the backend from here
-# instead would need the device's own credential in shell; a release is the
-# announcement anyway.
-PRIVATE_LOOKUP_OPEN=false
+# true. Opened in 0.3.16 (founder, 2026-11-20; certificate issuing has been on
+# since 2026-11-19). A node with ALLIUM_GATED_DHT on but no certificate (the
+# box is not opted in on the dashboard yet) runs no DHT proxy, so its
+# backend-down rendezvous stays dormant until it has one (it never falls back
+# to the public DHT); the status page says why it has not joined. Setting this
+# back to false in a release closes the option again.
+PRIVATE_LOOKUP_OPEN=true
 if [ "$PRIVATE_LOOKUP" = "true" ] && [ "$PRIVATE_LOOKUP_OPEN" != "true" ]; then
     echo "[allium-connect] Private lookup network is not open yet: the option is ignored until an add-on update announces it."
     PRIVATE_LOOKUP=false

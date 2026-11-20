@@ -68,7 +68,7 @@ The Configuration tab shows four options:
 
 ### Private lookup network
 
-- **Private lookup network** (off by default): this box helps your devices find each other through Allium's own lookup network instead of the public one. It also has to be turned on for this box on allium.network (Dashboard, Network). Anyone can join the private lookup network. Other members do not see your home's internet address unless you allow direct connections. **Not open yet:** leave it off. Until an add-on update announces the private lookup network, this option is ignored.
+- **Private lookup network** (off by default): this box helps your devices find each other through Allium's own lookup network instead of the public one. It also has to be turned on for this box on allium.network (Dashboard, Network). Anyone can join the private lookup network. Other members do not see your home's internet address unless you allow direct connections. Open since 0.3.16, in steps: members of other accounts cannot connect yet, so for now every choice below works as relays only. The add-on's page shows whether this box has joined. More: https://allium.network/help/private-lookup
 - **Connections to other members** (relays by default), set here only:
   - **relays**: always through Allium's relays.
   - **fallback**: relays, direct only if the relays cannot be reached. A new direct path still needs our servers.

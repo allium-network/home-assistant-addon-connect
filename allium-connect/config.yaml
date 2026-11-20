@@ -2,7 +2,7 @@ name: Allium Connect (Home Node)
 description: Reach Home Assistant, and anything else on your home network, from anywhere. No open ports, end-to-end encrypted.
 slug: allium-connect
 url: https://allium.network/connect
-version: 0.3.15
+version: 0.3.16
 arch:
   - amd64
   - aarch64
@@ -47,9 +47,8 @@ schema:
   advertise_exit: bool
   snowflake: bool
   # private_lookup: join the private lookup network (the private DHT). Off by
-  # default. Ignored by run.sh (PRIVATE_LOOKUP_OPEN=false) until the add-on
-  # release that announces the network; then it also needs this box opted in
-  # on the dashboard.
+  # default; open since 0.3.16 (run.sh PRIVATE_LOOKUP_OPEN=true). It also needs
+  # this box opted in on the dashboard.
   private_lookup: bool
   # connections: this box's path choice toward members of other accounts, set
   # here only (signed into the node's binding). relays is the default.

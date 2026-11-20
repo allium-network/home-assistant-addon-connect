@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.16
+- **The private lookup network is open.** Turn on "Private lookup network" in
+  the Configuration tab, and for this box on allium.network (Dashboard,
+  Network). Your devices then find each other through Allium's own lookup
+  network when Allium's servers are down, instead of the public one. It opens
+  in steps: members of other accounts cannot connect yet. The status page
+  shows a card that explains it, with your "Connections to other members"
+  choice.
+- Same engine as Allium Connect 1.0.96.
+
 ## 0.3.15
 - **Tidier status page.** "Connections to other members" no longer shows while
   the private lookup network is closed in the add-on. When an update opens it,

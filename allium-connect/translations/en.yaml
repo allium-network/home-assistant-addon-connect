@@ -26,11 +26,12 @@ configuration:
     name: Private lookup network
     description: >-
       Lets this box help your devices find each other through Allium's own
-      lookup network instead of the public one. Anyone can join the private
-      lookup network. Other members do not see your home's internet address
-      unless you allow direct connections below. Off by default. Not open
-      yet: leave it off. Until an add-on update announces the private lookup
-      network, this option is ignored.
+      lookup network instead of the public one when Allium's servers are
+      down. Also turn it on for this box on allium.network (Dashboard,
+      Network). Anyone can join. Other members do not see your home's
+      internet address unless you allow direct connections below. Off by
+      default. It opens in steps: members of other accounts cannot connect
+      yet.
   connections:
     name: Connections to other members
     description: >-

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.15
+- **Tidier status page.** "Connections to other members" no longer shows while
+  the private lookup network is closed in the add-on. When an update opens it,
+  the page explains it in a card of its own, with the choice next to it.
+- Same engine as Allium Connect 1.0.96.
+
 ## 0.3.14
 - **Safer status page.** The page now only answers when it is opened through
   Home Assistant or by this box's own address. A website you visit can no longer
